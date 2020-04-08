@@ -1,22 +1,42 @@
+const Transfer = require("../../../models/Transfer")
+
 const getAll =  (req, res) => {
-    res.json({
-        "status": "success",
-        "data": {
-            "transactions": []
+    Transfer.find({}, (err, docs) => {
+        if(!err) {
+            res.json({
+                "status": "success",
+                "data": {
+                    "transactions": docs
+                }
+            })
         }
     })
+    
 }
 
-const create = (req, res) => {
-    res.json({
-        "status": "success",
-        "data": {
-            "transaction": {
-                "sender": "user1",
-                "amount": "a coin",
-                "receiver": "user2"
-            }
+const create = (req, res, next) => {
+    let transfer = new Transfer()
+    transfer.sender = req.body.sender,
+    transfer.amount = req.body.amount,
+    transfer.receiver = req.body.receiver
+
+    transfer.save( (err, doc) => {
+        if(err) {
+            res.json({
+                "status": "error",
+                "message": "Could not transfer the coins"
+            })
         }
+
+        if(!err) {
+            res.json({
+                "status": "success",
+                "data": {
+                    "transaction": doc
+                }
+            })
+        }
+        
     })
 }
 
