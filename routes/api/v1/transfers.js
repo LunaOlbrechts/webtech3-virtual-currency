@@ -7,5 +7,6 @@ router.post("/", transfersController.create)
 
 /* GET /api/v1/transfers */
 router.get("/", transfersController.getAll)
+
   
 module.exports = router

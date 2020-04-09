@@ -7,6 +7,7 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiTransfersRouter = require('./routes/api/v1/transfers') 
+const apiLeaderboardRouter = require('./routes/api/v1/leaderboard')
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/virtual-currency', {useNewUrlParser: true, useUnifiedTopology: true}); // change localhost later to cluster online
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/v1/transfers', apiTransfersRouter)
+app.use('/api/v1/leaderboard', apiLeaderboardRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
