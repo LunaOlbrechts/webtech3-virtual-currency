@@ -1,15 +1,20 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 const leaderboardSchema = new Schema({
-    user: { // maybe change user to firstname and lastname? or email?,...
+    place: {
+        type: Number,
+        required: true
+    },
+    user: {
         type: String,
         required: true
     },
-    amount: {
+    balance: {
         type: Number,
         required: true
     }
-})
-const Leaderboard = mongoose.model('Leaderboard', leaderboardSchema)
+});
+
+const PlaceInLeaderboard = mongoose.model('PlaceInLeaderboard', leaderboardSchema);
 
 module.exports = Leaderboard
