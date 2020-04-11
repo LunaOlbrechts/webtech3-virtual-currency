@@ -1,4 +1,4 @@
-const Leaderboard = require("../../../models/leaderboard");
+const Leaderboard = require("../../../models/Leaderboard");
 
 const getAll =  (req, res) => {
     Leaderboard.find({
@@ -12,7 +12,7 @@ const getAll =  (req, res) => {
                 }
             })
         }
-    })
+    });
 }
 
 
