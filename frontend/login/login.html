@@ -11,18 +11,16 @@
 <body>
     <div class="container">
         <form action="" method="post">
-            <h2 form__title>Sign In</h2>
+            <h2 form-title>Inloggen</h2>
             <div class="login">
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input class="form-control" type="text" class="email" name='email' placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input class="form-control" type="password" class="password" name='password' placeholder="Wachtwoord">
-                </div>
 
-                <div class="form-group">
+                <div class="title"><label class="title-email" for="email">E-mail</label></div>
+                <input class="form-control" type="text" id="input-email" name='email' placeholder="Email">
+
+                <div class="title"><label class="title-password" for="password">Password</label></div>
+                <input class="form-control" type="password" id="input-password" name='password' placeholder="Wachtwoord">
+
+                <div class="btn-login">
                     <input class="btn border" type="submit" value="Inloggen" name='submit'>
                 </div>
 

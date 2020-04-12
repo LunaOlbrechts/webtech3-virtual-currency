@@ -2,16 +2,64 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.login{
+.container{
     display: grid;
-    grid-template-columns:  1fr 4fr 1fr;
-    grid-template-rows:  2fr 1fr 1fr 1fr;
-    column-gap: 10px;
-    row-gap: 15px;
     justify-items: center;
-    border: 1px solid gray;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    height: 100vh;
 }
 
-.email{
-    grid-row: 2/ 1 span;
+h2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.login{
+    display: grid;
+    grid-template-columns:  3fr;
+    grid-template-rows:  1fr 2fr 1fr 2fr 2fr 1fr; 
+    row-gap: 20px;
+    height: 450px;   
+    align-self: center;
+    justify-self: center;
+}
+
+input{
+    height: 40px;
+    background-color: #BCDEF8;
+    border-radius: 4px;
+    color: white;
+    border: 1px solid rgb(245, 245, 245);
+}
+
+input.btn{
+    width: 150px;
+    font-size: 1em;
+}
+
+.title{
+    display: grid;
+    justify-self: start;
+    margin-top: 30px;
+}
+
+.title-email{
+    justify-items: start;
+    row-gap: 5px;
+    grid-column: 1;
+    grid-row: 1/ span 1;
+}
+
+#input-email{
+    grid-column: 1;
+    grid-row: 2/ span 1;
+}
+
+.btn-login{
+    grid-column: 1;
+    grid-row: 5/5;
+    text-align: center;
 }
