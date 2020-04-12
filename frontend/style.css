@@ -1,0 +1,17 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login{
+    display: grid;
+    grid-template-columns:  1fr 4fr 1fr;
+    grid-template-rows:  2fr 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 15px;
+    justify-items: center;
+    border: 1px solid gray;
+}
+
+.email{
+    grid-row: 2/ 1 span;
+}
