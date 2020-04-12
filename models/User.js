@@ -4,11 +4,11 @@ const passportLocalMongoose = require('passport-local-mongoose');
 
 const User = new Schema({
     balance: 0,
-    email: {
+    username: {
         type: String,
         required: true
     },
-    username: {
+    password: {
         type: String,
         required: true
     }
