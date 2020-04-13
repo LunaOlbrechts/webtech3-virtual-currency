@@ -1,23 +1,30 @@
 const User = require('../models/User');
 const passport = require('../passport/passport');
+const jwt = require('jsonwebtoken');
 
 const signup = async (req, res, next) => {
-    let username = req.body.username;
+    let email = req.body.email;
     let password = req.body.password;
+    let balance = 0;
 
     const user = new User({
-        username: username,
-        password: password
+        email: email,
+        balance: balance
     });
-    await user.setPassword('password');
+    await user.setPassword(password);
     await user.save().then(result => {
+        let token = jwt.sign({
+            uid: result._id
+        }, "MdPa0ùecv");
         res.json({
             "status": "succes",
             "data": {
-                "user": user
+                "token": token,
+                "result": result
             }
         });
     }).catch(error => {
+        console.log(error);
         res.json({
             "status": "failed",
             "message": {
@@ -28,7 +35,7 @@ const signup = async (req, res, next) => {
 }
 
 const login = async (req, res, next) =>{
-    const  user  = await User.authenticate()(req.body.username, req.body.password)
+    const  user  = await User.authenticate()(req.body.email, req.body.password)
     .then(result => {
         res.json({
             "status": "succes",

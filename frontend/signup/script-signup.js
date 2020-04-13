@@ -9,7 +9,7 @@ let btnLogin = document.querySelector("#login").addEventListener("click", functi
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            "username": email,
+            "email": email,
             "password": password
         })
     }).then(response => {
@@ -18,7 +18,10 @@ let btnLogin = document.querySelector("#login").addEventListener("click", functi
         console.log(json);
         if(json.status === "succes"){
             let feedback = document.querySelector('.message');
-            feedback.textContent = "yes";
+            
+            let token = json.data.token;
+            localStorage.setItem("token", token);
+            window.location.href = "../index/app.html";
         }
     });
 });
