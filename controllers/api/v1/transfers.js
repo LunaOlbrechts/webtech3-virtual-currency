@@ -2,7 +2,7 @@ const Transfer = require("../../../models/Transfer")
 const User = require('../../../models/User');
 
 const getAll =  (req, res) => {
-    Transfer.find({}, (err, docs) => {
+    Transfer.find({$or: [{ sender: /*req.user.email*/"test@test.com" }, { receiver: /*req.user.email*/"test@test.com" }]}, (err, docs) => { //change to res.user.email once authentication works
         if(!err) {
             res.json({
                 "status": "success",
