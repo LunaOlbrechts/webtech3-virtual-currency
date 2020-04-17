@@ -13,6 +13,7 @@ const apiLeaderboardRouter = require('./routes/api/v1/leaderboard');
 
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
 mongoose.connect('mongodb://localhost:27017/virtual-currency', {useNewUrlParser: true, useUnifiedTopology: true}); // change localhost later to cluster online
 
 const app = express();
