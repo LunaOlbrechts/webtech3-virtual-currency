@@ -1,0 +1,23 @@
+.form__container{ // div around inputs
+    display: grid;
+    grid-template-columns:  3fr;
+    grid-template-rows:  1fr 2fr 1fr 2fr 2fr 1fr; 
+    row-gap: 20px;
+    height: 450px;   
+    align-self: center;
+    justify-self: center;
+}
+
+input{
+    height: 40px;
+    background-color: $color-login-input;
+    border-radius: 4px;
+    color: $color-white;
+    border: 1px solid $color-login-input-border;
+}
+
+#input--amount, #input--receiver {
+    border: 1px solid $color-default;
+    background-color: transparent;
+    color: $color-black;
+}

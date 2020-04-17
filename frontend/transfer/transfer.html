@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../style.css"> <!-- remove once fully transfered to scss-->
+    <link rel="stylesheet" href="../dist/app.css">
     <title>Coins versturen</title>
 </head>
 <body>
     <!-- front end doesn't work yet -->
     <div class="container">
         <div class="message"></div>
-        <h2 form-title>Huidig Balans:</h2>
-        <h1 form-title>XXXX</h1>
-        <div class="login">
+        <div>
+            <h2 form-title>Huidig Balans:</h2>
+            <h1>XXXX</h1>
+        </div>
+        
+        <div class="form__container">
 
             <div class="title"><label class="title--amount" for="amount">Aantal</label></div>
-            <input class="form-control" type="text" id="input--amount" name='amount' placeholder="Aantal">
+            <input class="form-control" type="text" id="input--amount" name='amount'>
 
             <div class="title"><label class="title--receiver" for="receiver">Ontvanger</label></div>
-            <input class="form-control" type="text" id="input--receiver" name='receiver' placeholder="Ontvanger">
+            <input class="form-control" type="text" id="input--receiver" name='receiver'>
 
-            <div class="btn-login">
-                <button class="btn btn--primary transfer-btn" id="transfer">Versturen</button>
+            <div class="btn__container">
+                <button class="btn btn--primary btn--xl" id="transfer">Versturen</button>
             </div>
         </div>
     </div>
