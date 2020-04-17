@@ -17,36 +17,49 @@ const getAll =  (req, res) => {
 
 const create = (req, res, next) => {
     let transfer = new Transfer()
-    transfer.sender = /*req.user.email*/ 1, //change to res.user.email once authentication works
+    transfer.sender = /*req.user.email*/ "test@test.com", //change to res.user.email once authentication works
     transfer.amount = req.body.amount,
     transfer.receiver = req.body.receiver
 
     User.find({email : transfer.receiver}, (err, docs) => {
-        if(docs.length) {
-            transfer.save( (err, doc) => {
-                if(err) {
-                    res.json({
-                        "status": "error",
-                        "message": "Could not transfer the coins",
-                    })
-                }
         
-                if(!err) {
-                    res.json({
-                        "status": "success",
-                        "data": {
-                            "transaction": doc,
+        User.find({email: transfer.sender}, (err2,docs2) => {
+            console.log(docs)
+            console.log(docs2[0].balance)
+
+            if(docs2[0].balance >= transfer.amount) {
+                if(docs.length) {
+                    transfer.save( (err, doc) => {
+                        if(err) {
+                            res.json({
+                                "status": "error",
+                                "message": "Could not transfer the coins",
+                            })
+                        }
+                
+                        if(!err) {
+                            res.json({
+                                "status": "success",
+                                "data": {
+                                    "transaction": doc,
+                                }
+                            })
                         }
                     })
+        
+                }else {
+                    res.json({
+                        "status": "error",
+                        "message": "Could not find the user you want to tranfser coins to",
+                    })
                 }
-            })
-
-        }else {
-            res.json({
-                "status": "error",
-                "message": "Could not transfer the coins 2",
-            })
-        }
+            }else {
+                res.json({
+                    "status": "error",
+                    "message": "insufficient balance",
+                })
+            }
+        })      
     })
 }
 
