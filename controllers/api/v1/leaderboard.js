@@ -1,15 +1,18 @@
-const Leaderboard = require("../../../models/leaderboard")
+const Leaderboard = require("../../../models/Leaderboard");
 
 const getAll =  (req, res) => {
-    Leaderboard.find({}, (err, docs) => {
+    Leaderboard.find({
+        "place": 1
+    }, (err, docs) => {
         if(!err) {
             res.json({
                 "status": "success",
-                "data": "TBC"//TBC, put data from Leaderboard.find here once this exists
+                "data": {
+                    "score": docs
+                }
             })
         }
-    })
-    
+    });
 }
 
-module.exports.getAll = getAll
+module.exports.getAll = getAll;
