@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css"> 
+    <title>Coins versturen</title>
+</head>
+<body>
+    <!-- front end doesn't work yet -->
+    <div class="container">
+        <div class="message"></div>
+        <h2 form-title>Huidig Balans:</h2>
+        <h1 form-title>XXXX</h1>
+        <div class="login">
+
+            <div class="title"><label class="title--amount" for="amount">Aantal</label></div>
+            <input class="form-control" type="text" id="input--amount" name='amount' placeholder="Aantal">
+
+            <div class="title"><label class="title--receiver" for="receiver">Ontvanger</label></div>
+            <input class="form-control" type="text" id="input--receiver" name='receiver' placeholder="Ontvanger">
+
+            <div class="btn-login">
+                <button class="btn btn--primary transfer-btn" id="transfer">Versturen</button>
+            </div>
+        </div>
+    </div>
+    <script src="./transfer.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 const Transfer = require("../../../models/Transfer")
+const User = require('../../../models/User');
 
 const getAll =  (req, res) => {
     Transfer.find({}, (err, docs) => {
@@ -16,27 +17,36 @@ const getAll =  (req, res) => {
 
 const create = (req, res, next) => {
     let transfer = new Transfer()
-    transfer.sender = req.body.sender,
+    transfer.sender = /*req.user.email*/ 1, //change to res.user.email once authentication works
     transfer.amount = req.body.amount,
     transfer.receiver = req.body.receiver
 
-    transfer.save( (err, doc) => {
-        if(err) {
-            res.json({
-                "status": "error",
-                "message": "Could not transfer the coins"
-            })
-        }
-
-        if(!err) {
-            res.json({
-                "status": "success",
-                "data": {
-                    "transaction": doc
+    User.find({email : transfer.receiver}, (err, docs) => {
+        if(docs.length) {
+            transfer.save( (err, doc) => {
+                if(err) {
+                    res.json({
+                        "status": "error",
+                        "message": "Could not transfer the coins",
+                    })
+                }
+        
+                if(!err) {
+                    res.json({
+                        "status": "success",
+                        "data": {
+                            "transaction": doc,
+                        }
+                    })
                 }
             })
+
+        }else {
+            res.json({
+                "status": "error",
+                "message": "Could not transfer the coins 2",
+            })
         }
-        
     })
 }
 
