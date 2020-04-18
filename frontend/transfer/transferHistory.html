@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../style.css"> <!-- remove once fully transfered to scss-->
+    <link rel="stylesheet" href="../dist/app.css">
+    <title>Transfer geschiedenis</title>
+</head>
+<body>
+    <div class="history__container">
+        <div class="history__label"><h3>Recente transacties</h3></div>
+    </div>
+
+    <div class="transfer"> <!-- zet deze met js foreach transfer in db where logged in user was present-->
+        <div class="transfer__item transfer__avatar"></div>
+        <div class="transfer__item transfer__name"><p>test@email.com</p></div>
+        <div class="transfer__item transfer__amount"><p class="transfer__amount--send">+XX.XX</p></div> <!-- in js if user send coins, add transfer__amount--send else add transfer__amount--received  -->
+    </div>
+
+    <div class="transfer"> <!-- delete-->
+        <div class="transfer__item transfer__avatar"></div>
+        <div class="transfer__item transfer__name"><p>test@email.com</p></div>
+        <div class="transfer__item transfer__amount"><p class="transfer__amount--received">+XX.XX</p></div>
+    </div>
+</body>
+</html>

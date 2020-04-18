@@ -11,6 +11,62 @@ body{
     height: 100vh;
 }
 
+.history__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.history__label {
+    background-color: #FD823E;
+    text-align: center;
+    color: #fff;
+}
+
+.transfer {
+    display: flex;
+    flex-direction: row;
+}
+
+.transfer__avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #C4C4C4;
+    margin: 0.5em 0 0.5em 0.5em;
+}
+
+.transfer__item {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.transfer__name {
+    margin-left: 0.5em;
+}
+
+.transfer__amount {
+    margin-left: auto;
+    margin-right: 0.5em;
+}
+
+.transfer__amount--send {
+    color: #D75358;
+}
+
+.transfer__amount--received {
+    color: #33B406;
+}
+
+.balance__container {
+    background-color: #7AD3BB;
+    width: 100%;
+}
+
+.balance__container h1 {
+    color: #fff;
+}
+
 .title{
     display: grid;
     justify-self: start;
