@@ -10,10 +10,21 @@ fetch("http://localhost:3000/api/v1/transfers", {
     console.log(json.data.transactions);
     json.data.transactions.forEach(item => {
         if(item.sender == "test@test.com") {
-            console.log("sender")
+            var transferItem = `<div class="transfer"> 
+            <div class="transfer__item transfer__avatar"></div>
+            <div class="transfer__item transfer__name"><p>${item.receiver}</p></div>
+            <div class="transfer__item transfer__amount"><p class="transfer__amount--send">-${item.amount}</p></div>
+            </div>`
+            
         }else {
-            console.log("receiver")
+            var transferItem = `<div class="transfer"> 
+            <div class="transfer__item transfer__avatar"></div>
+            <div class="transfer__item transfer__name"><p>${item.sender}</p></div>
+            <div class="transfer__item transfer__amount"><p class="transfer__amount--received">+${item.amount}</p></div>
+            </div>`
+            console.log(transferItem)
         }
+        document.querySelector('.history__container').insertAdjacentHTML('afterend', transferItem)
     });
 }).catch(err => {
     console.log(err)

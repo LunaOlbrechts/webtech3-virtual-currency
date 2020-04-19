@@ -11,7 +11,7 @@ body{
     height: 100vh;
 }
 
-.history__container {
+.history__container__head {
     display: flex;
     flex-direction: column;
 }
