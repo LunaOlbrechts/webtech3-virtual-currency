@@ -59,7 +59,7 @@ transferBtn.addEventListener('click', e => {
 /* updateBalance function */
 let updateBalance = () => {
     /* get balance */
-    fetch("http://localhost:3000/api/v1/transfers/balance", {
+    fetch("http://localhost:3000/api/v1/transfers/user", {
         method: "get",
         'headers': {
             'content-type': 'application/json',

@@ -9,6 +9,6 @@ router.post("/", transfersController.create)
 router.get("/", transfersController.getAll)
 
 /* GET /api/v1/transfers/balance */
-router.get("/balance", transfersController.getBalance)
+router.get("/user", transfersController.getUser)
   
 module.exports = router

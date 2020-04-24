@@ -16,7 +16,7 @@ const getAll =  (req, res) => {
 }
 
 //GET ONE MESSAGE
-const getBalance = (req, res) => {
+const getUser = (req, res) => {
     User.find({_id: req.user._id}, (err, docs) => {
         res.json({
             "status": "success",
@@ -24,6 +24,7 @@ const getBalance = (req, res) => {
         })
     }) 
 }
+
 
 const create = (req, res, next) => {
     let transfer = new Transfer()
@@ -95,5 +96,5 @@ const create = (req, res, next) => {
 }
 
 module.exports.getAll = getAll
-module.exports.getBalance = getBalance
+module.exports.getUser = getUser
 module.exports.create = create
