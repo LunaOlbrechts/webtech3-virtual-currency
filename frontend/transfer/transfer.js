@@ -3,6 +3,15 @@ if (!localStorage.getItem("token")) {
     window.location.href = "../login/login.html";
 }
 
+/* Primus live */
+primus = Primus.connect("http://localhost:3000", {
+    reconnect: {
+        max: Infinity,
+        min: 500,
+        retries: 10
+    }
+})
+
 let transferBtn = document.querySelector('#transfer')
 let amountField = document.querySelector('#input__amount')
 let receiverField = document.querySelector('#input__receiver')
@@ -46,7 +55,6 @@ fetch("http://localhost:3000/api/v1/transfers/balance", {
 }).then(result => {
     return result.json();
 }).then(json => {
-    console.log(json.user.balance)
     balanceCounter.innerHTML = json.user.balance
 }).catch(err => {
     console.log(err)
