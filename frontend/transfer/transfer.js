@@ -12,6 +12,15 @@ primus = Primus.connect("http://localhost:3000", {
     }
 })
 
+primus.on('data', (json) => {
+    if(json.action === "updated balance counter") {
+        console.log("test")
+        console.log(json.data)
+        updateBalance()
+    }
+})
+
+
 let transferBtn = document.querySelector('#transfer')
 let amountField = document.querySelector('#input__amount')
 let receiverField = document.querySelector('#input__receiver')
@@ -39,26 +48,34 @@ transferBtn.addEventListener('click', e => {
             return result.json();
         }).then(json => {
             messageField.innerHTML = json.message
+            primus.write({
+                "action": "updated balance counter",
+                "data": json
+            })
         }).catch(err => {
             console.log(err)
         });
     }
 })
 
-/* get balance */
-fetch("http://localhost:3000/api/v1/transfers/balance", {
-    method: "get",
-    'headers': {
-        'content-type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
-    }
-}).then(result => {
-    return result.json();
-}).then(json => {
-    balanceCounter.innerHTML = json.user.balance
-}).catch(err => {
-    console.log(err)
-});
+/* updateBalance function */
+let updateBalance = () => {
+    /* get balance */
+    fetch("http://localhost:3000/api/v1/transfers/balance", {
+        method: "get",
+        'headers': {
+            'content-type': 'application/json',
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }
+    }).then(result => {
+        return result.json();
+    }).then(json => {
+        balanceCounter.innerHTML = json.user.balance
+    }).catch(err => {
+        console.log(err)
+    });
+}
+updateBalance()
 
 function isEmpty(value){
     return (value == null || value.length === 0);
