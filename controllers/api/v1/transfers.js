@@ -15,6 +15,16 @@ const getAll =  (req, res) => {
     
 }
 
+//GET ONE MESSAGE
+const getBalance = (req, res) => {
+    User.find({_id: req.user._id}, (err, docs) => {
+        res.json({
+            "status": "success",
+            "user": docs[0]
+        })
+    }) 
+}
+
 const create = (req, res, next) => {
     let transfer = new Transfer()
     transfer.sender = req.user.email,
@@ -79,4 +89,5 @@ const create = (req, res, next) => {
 }
 
 module.exports.getAll = getAll
+module.exports.getBalance = getBalance
 module.exports.create = create

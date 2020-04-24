@@ -8,5 +8,7 @@ router.post("/", transfersController.create)
 /* GET /api/v1/transfers */
 router.get("/", transfersController.getAll)
 
+/* GET /api/v1/transfers/balance */
+router.get("/balance", transfersController.getBalance)
   
 module.exports = router
