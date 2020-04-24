@@ -56,6 +56,37 @@ input {
   color: #000;
 }
 
+.container {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  height: 100vh;
+}
+
+.history__container {
+  display: flex;
+  flex-direction: column;
+  background-color: #FD823E;
+}
+
+.base__container {
+  display: flex;
+  flex-direction: column;
+  height: 33vh;
+  background-color: #7AD3BB;
+}
+
+.balance__container {
+  width: 100%;
+  margin-top: 5vh;
+}
+
+.transfer__container {
+  display: grid;
+}
+
 /* ./node_modules/.bin/sass --watch ./frontend/source/sass/app.scss:./frontend/dist/app.css */
 
 /*# sourceMappingURL=app.css.map */

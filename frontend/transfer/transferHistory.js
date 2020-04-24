@@ -62,7 +62,6 @@ method: "get",
 }).then(result => {
     return result.json();
 }).then(json => {
-    console.log(json.user.email)
     email = json.user.email
     appendTransfers()
 }).catch(err => {
