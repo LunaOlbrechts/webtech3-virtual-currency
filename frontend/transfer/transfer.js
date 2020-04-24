@@ -1,3 +1,8 @@
+/* redirect if not logged in */
+if (!localStorage.getItem("token")) {
+    window.location.href = "../login/login.html";
+}
+
 let transferBtn = document.querySelector('#transfer')
 let amountField = document.querySelector('#input__amount')
 let receiverField = document.querySelector('#input__receiver')
@@ -13,20 +18,21 @@ transferBtn.addEventListener('click', e => {
         method: "post",
         'headers': {
             'content-type': 'application/json',
-            'Authorization': 'Bearer' + localStorage.getItem('token')
-        }
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }, 
+        body: JSON.stringify({
+            "amount": amount,
+            "receiver": receiver
+        })
         }).then(result => {
             return result.json();
         }).then(json => {
-            console.log("test");
+            messageField.innerHTML = json.message
         }).catch(err => {
             console.log(err)
         });
     }
 })
-
-
-
 
 function isEmpty(value){
     return (value == null || value.length === 0);

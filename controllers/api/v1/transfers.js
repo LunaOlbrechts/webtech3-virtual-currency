@@ -2,7 +2,7 @@ const Transfer = require("../../../models/Transfer")
 const User = require('../../../models/User');
 
 const getAll =  (req, res) => {
-    Transfer.find({$or: [{ sender: /*req.user.email*/"test@test.com" }, { receiver: /*req.user.email*/"test@test.com" }]}, (err, docs) => { //change to res.user.email once authentication works
+    Transfer.find({$or: [{ sender: req.user.email }, { receiver: req.user.email }]}, (err, docs) => {
         if(!err) {
             res.json({
                 "status": "success",
@@ -17,7 +17,7 @@ const getAll =  (req, res) => {
 
 const create = (req, res, next) => {
     let transfer = new Transfer()
-    transfer.sender = /*req.user.email*/ "test@test.com", //change to res.user.email once authentication works
+    transfer.sender = req.user.email,
     transfer.amount = req.body.amount,
     transfer.receiver = req.body.receiver
 
@@ -32,13 +32,14 @@ const create = (req, res, next) => {
                         if(err) {
                             res.json({
                                 "status": "error",
-                                "message": "Could not transfer the coins",
+                                "message": "Er is iets misgelopen, de coins zijn niet verstuurd",
                             })
                         }
                 
                         if(!err) {
                             res.json({
                                 "status": "success",
+                                "message": "Coins verstuurd",
                                 "data": {
                                     "transaction": doc,
                                 }
@@ -64,13 +65,13 @@ const create = (req, res, next) => {
                 }else {
                     res.json({
                         "status": "error",
-                        "message": "Could not find the user you want to tranfser coins to",
+                        "message": "De user waar je coins naar wilde sturen is niet gevonden",
                     })
                 }
             }else {
                 res.json({
                     "status": "error",
-                    "message": "insufficient balance",
+                    "message": "je balans is niet groot genoeg",
                 })
             }
         })      
