@@ -11,14 +11,23 @@ body{
     height: 100vh;
 }
 
-.history__container__head {
+.history__container{
     display: flex;
     flex-direction: column;
+    background-color: #FD823E;
 }
 
-.history__label {
-    background-color: #FD823E;
-    text-align: center;
+.base__container {
+    display: flex;
+    flex-direction: column;
+    height: 33vh;
+    background-color: #7AD3BB;
+}
+
+.base__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
 }
 
@@ -59,8 +68,12 @@ body{
 }
 
 .balance__container {
-    background-color: #7AD3BB;
     width: 100%;
+    margin-top: 5vh;
+}
+
+.transfer__container {
+    display: grid;
 }
 
 .balance__container h1 {

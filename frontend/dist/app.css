@@ -56,4 +56,6 @@ input {
   color: #000;
 }
 
+/* ./node_modules/.bin/sass --watch ./frontend/source/sass/app.scss:./frontend/dist/app.css */
+
 /*# sourceMappingURL=app.css.map */

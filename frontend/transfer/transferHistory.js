@@ -7,7 +7,6 @@ fetch("http://localhost:3000/api/v1/transfers", {
 }).then(result => {
     return result.json();
 }).then(json => {
-    console.log(json.data.transactions);
     json.data.transactions.forEach(item => {
         if(item.sender == "test@test.com") {
             var transferItem = `<div class="transfer"> 
@@ -22,7 +21,6 @@ fetch("http://localhost:3000/api/v1/transfers", {
             <div class="transfer__item transfer__name"><p>${item.sender}</p></div>
             <div class="transfer__item transfer__amount"><p class="transfer__amount--received">+${item.amount}</p></div>
             </div>`
-            console.log(transferItem)
         }
         document.querySelector('.history__container').insertAdjacentHTML('afterend', transferItem)
     });
