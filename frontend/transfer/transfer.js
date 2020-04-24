@@ -14,8 +14,6 @@ primus = Primus.connect("http://localhost:3000", {
 
 primus.on('data', (json) => {
     if(json.action === "updated balance counter") {
-        console.log("test")
-        console.log(json.data)
         updateBalance()
     }
 })
