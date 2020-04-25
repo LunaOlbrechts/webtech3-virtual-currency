@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="../normalize.css">
     <link rel="stylesheet" href="../style.css"> <!-- remove once fully transfered to scss-->
     <link rel="stylesheet" href="../dist/app.css">
-    <title>Document</title>
+    <title>Transfer geschiedenis</title>
 </head>
 <body>
-    <h1>WELCOME</h1>
-    <script src="../app.js"></script>
+    <div class="history__container">
+        <div class="base__label"><h3>Recente transacties</h3></div>
+    </div>
+    
+    <script src="http://localhost:3000/primus/primus.js"></script>
+    <script src="./transferHistory.js"></script>
 </body>
 </html>

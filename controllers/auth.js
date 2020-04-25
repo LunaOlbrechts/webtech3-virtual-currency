@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const signup = async (req, res, next) => {
     let email = req.body.email;
     let password = req.body.password;
-    let balance = 0;
+    let balance = 100;
 
     const user = new User({
         email: email,

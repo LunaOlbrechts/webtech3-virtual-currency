@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../style.css"> <!-- remove once fully transfered to scss-->
+    <link rel="stylesheet" href="../dist/app.css">
     <title>Inloggen</title>
 </head>
 
@@ -11,7 +13,7 @@
     <div class="container">
             <div class="message"></div>
             <h2 form-title>Inloggen</h2>
-            <div class="login">
+            <div class="form__container">
 
                 <div class="title"><label class="title-email" for="email">E-mail</label></div>
                 <input class="form-control" type="text" id="input-email" name='email' placeholder="Email">
@@ -19,8 +21,8 @@
                 <div class="title"><label class="title-password" for="password">Password</label></div>
                 <input class="form-control" type="password" id="input-password" name='password' placeholder="Wachtwoord">
 
-                <div class="btn-login">
-                    <button class="btn btn--primary login-btn" id="login">Inloggen</button>
+                <div class="btn__container">
+                    <button class="btn btn--primary btn--login" id="login">Inloggen</button>
                 </div>
 
                 <div>
