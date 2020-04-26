@@ -32,8 +32,7 @@ const create = (req, res, next) => {
     transfer.amount = req.body.amount,
     transfer.receiver = req.body.receiver
 
-    User.find({email : transfer.receiver}, (err, docs) => {
-        
+    User.find({email: transfer.receiver}, (err, docs) => {
         User.find({email: transfer.sender}, (err2,docs2) => {
             
             if(docs[0].email == docs2[0].email) {
