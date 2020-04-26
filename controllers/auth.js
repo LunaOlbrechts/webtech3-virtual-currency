@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const passport = require('../passport/passport');
 const jwt = require('jsonwebtoken');
+const config = require('config');
 
 const signup = async (req, res, next) => {
     let email = req.body.email;
@@ -11,11 +12,12 @@ const signup = async (req, res, next) => {
         email: email,
         balance: balance
     });
+    
     await user.setPassword(password);
     await user.save().then(result => {
         let token = jwt.sign({
             uid: result._id
-        }, "MdPa0ùecv");
+        }, config.get('jwt.secret'));
         res.json({
             "status": "succes",
             "data": {
@@ -45,7 +47,7 @@ const login = async (req, res, next) =>{
 
         let token = jwt.sign({
             uid: result.user._id
-        }, "MdPa0ùecv");
+        }, config.get('jwt.secret '));
 
         return res.json({
             "status": "succes",
