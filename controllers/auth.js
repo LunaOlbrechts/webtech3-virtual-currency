@@ -12,7 +12,7 @@ const signup = async (req, res, next) => {
         email: email,
         balance: balance
     });
-    
+
     await user.setPassword(password);
     await user.save().then(result => {
         let token = jwt.sign({
@@ -21,8 +21,7 @@ const signup = async (req, res, next) => {
         res.json({
             "status": "succes",
             "data": {
-                "token": token,
-                "result": result
+                "token": token
             }
         });
     }).catch(error => {
