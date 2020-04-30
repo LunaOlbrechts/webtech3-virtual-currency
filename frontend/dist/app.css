@@ -1,3 +1,7 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 h1, h2 {
   display: flex;
   justify-content: center;
@@ -65,10 +69,16 @@ input {
   height: 100vh;
 }
 
-.history__container {
+.header {
   display: flex;
+  font-size: 1.5em;
   flex-direction: column;
-  background-color: #FD823E;
+  background-color: #fd823e;
+  text-align: center;
+}
+
+.header__text{
+  color: white;
 }
 
 .base__container {
@@ -86,6 +96,62 @@ input {
 .transfer__container {
   display: grid;
 }
+
+.template{
+
+}
+
+.score {
+  border-top: 1px solid rgba(128, 128, 128, 0.568);
+  display: grid;
+  grid-template-columns: 3fr 7fr 3fr;
+  grid-template-rows: none;
+}
+
+.score__place {
+  color: black;
+  grid-column: 1/1;
+  font-size: 1.4em;
+  justify-self: center;
+
+}
+
+.score--gold{
+  color: #FFD700;
+  font-weight: bold;
+  grid-column: 1/1;
+  font-size: 1.9em;
+  justify-self: center;
+}
+
+.score--silver{
+  color: #C0C0C0;
+  font-weight: bold;
+  grid-column: 1/1;
+  font-size: 1.9em;
+  justify-self: center;
+}
+
+.score--bronze{
+  color: #cd7f32;
+  font-weight: bold;
+  grid-column: 1/1;
+  font-size: 1.9em;
+  justify-self: center;
+}
+
+.score__name{
+  grid-column: 2/2;
+  justify-self: start;
+  align-self: center;
+}
+
+.score__balance{
+  grid-column: 3/3;
+  justify-self: center;
+  align-self: center;
+}
+
 
 /* ./node_modules/.bin/sass --watch ./frontend/source/sass/app.scss:./frontend/dist/app.css */
 

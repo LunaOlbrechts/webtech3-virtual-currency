@@ -12,19 +12,21 @@ const getAll =  (req, res) => {
                 });
             }
             if (!err) {
+                let place= 1;
                 res.json({
                     "status": "success",
                     'values': result.map(function (result) {
                         return {
-                            email: result.email,
-                            balance: result.balance,
+                            "email": result.email,
+                            "balance": result.balance,
+                            "place": place++
+
                         }
                     })
-                });         
+                }); 
             }
         })
 }
-
 
 
 module.exports.getAll = getAll;
