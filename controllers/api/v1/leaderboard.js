@@ -15,12 +15,11 @@ const getAll =  (req, res) => {
                 let place= 1;
                 res.json({
                     "status": "success",
-                    'values': result.map(function (result) {
+                    'data': result.map(function (result) {
                         return {
                             "email": result.email,
                             "balance": result.balance,
                             "place": place++
-
                         }
                     })
                 }); 

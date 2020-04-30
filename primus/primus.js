@@ -9,8 +9,8 @@ let go = (server) => {
             console.log(data)
             console.log("data received")
             primus.write(data); 
-        })
-    })
+        });
+    });
 }
 
 module.exports.go = go

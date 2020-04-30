@@ -18,7 +18,6 @@ primus.on('data', (json) => {
     }
 })
 
-
 let transferBtn = document.querySelector('#transfer')
 let amountField = document.querySelector('#input__amount')
 let receiverField = document.querySelector('#input__receiver')
@@ -45,11 +44,12 @@ transferBtn.addEventListener('click', e => {
         }).then(result => {
             return result.json();
         }).then(json => {
+            console.log(json);
             messageField.innerHTML = json.message
             primus.write({
                 "action": "updated balance counter",
                 "data": json
-            })
+            });
         }).catch(err => {
             console.log(err)
         });
