@@ -97,10 +97,6 @@ input {
   display: grid;
 }
 
-.template{
-
-}
-
 .score {
   border-top: 1px solid rgba(128, 128, 128, 0.568);
   display: grid;
@@ -113,7 +109,6 @@ input {
   grid-column: 1/1;
   font-size: 1.4em;
   justify-self: center;
-
 }
 
 .score--gold{
@@ -152,7 +147,24 @@ input {
   align-self: center;
 }
 
+.nav{
+  background-color: #b6b6b6;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+}
 
+.nav__link{
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  justify-self: center;
+  align-self: center;
+}
 /* ./node_modules/.bin/sass --watch ./frontend/source/sass/app.scss:./frontend/dist/app.css */
 
 /*# sourceMappingURL=app.css.map */
