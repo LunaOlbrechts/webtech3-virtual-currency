@@ -55,7 +55,6 @@ const login = async (req, res, next) =>{
             uid: result._id
         }, config.get('jwt.secret'));
 
-        console.log(token);
         return res.json({
             "status": "succes",
             "data": {

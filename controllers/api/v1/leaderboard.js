@@ -10,8 +10,7 @@ const getAll =  (req, res) => {
                 console.log("hahaha");
                 return res.json({
                     "status": "failed",
-                    "message": "Er is iets misgelopen met het ophalen van de users",
-                    "err": err
+                    "message": "Er is iets misgelopen met het ophalen van de users"
                 });
             }
             if (!err) {

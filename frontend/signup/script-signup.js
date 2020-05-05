@@ -13,8 +13,6 @@ let btnSignup = document.querySelector("#signup").addEventListener("click", (e) 
         },
         body: JSON.stringify({
             "email": email,
-            "firstname": firstname,
-            "lastname": lastname,
             "password": password
         })
     }).then(response => {
