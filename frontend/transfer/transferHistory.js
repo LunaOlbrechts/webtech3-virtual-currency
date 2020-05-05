@@ -29,7 +29,6 @@ let appendTransfers = () => {
     }).then(result => {
         return result.json();
     }).then(json => {
-        console.log(json.data.transactions)
         json.data.transactions.forEach(item => {
             if(item.sender == email /* change test@test.com from hardcoded to logged in user id */) {
                 var transferItem = `<div class="transfer"> 
