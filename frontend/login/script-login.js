@@ -1,3 +1,4 @@
+localStorage.removeItem('token');
 
 let btnLogin = document.querySelector("#login").addEventListener("click", (e) => {
     let email = document.querySelector("#input-email").value;
