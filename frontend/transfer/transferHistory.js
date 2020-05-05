@@ -29,6 +29,7 @@ let appendTransfers = () => {
     }).then(result => {
         return result.json();
     }).then(json => {
+        console.log(json.data.transactions)
         json.data.transactions.forEach(item => {
             if(item.sender == email /* change test@test.com from hardcoded to logged in user id */) {
                 var transferItem = `<div class="transfer"> 
@@ -44,7 +45,7 @@ let appendTransfers = () => {
                 <div class="transfer__item transfer__amount"><p class="transfer__amount--received">+${item.amount}</p></div>
                 </div>`
             }
-            document.querySelector('.history__container').insertAdjacentHTML('afterend', transferItem)
+            document.querySelector('.header').insertAdjacentHTML('afterend', transferItem)
         });
     }).catch(err => {
         console.log(err)
