@@ -21,8 +21,7 @@ const signup = async (req, res, next) => {
     await user.save().then(result => {
 
         let token = jwt.sign({
-            uid: result._id,
-            "date":  timeNow
+            uid: result._id
         }, config.get('jwt.secret'));
         
         res.json({
