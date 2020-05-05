@@ -1,6 +1,9 @@
+localStorage.removeItem('token');
 
 let btnSignup = document.querySelector("#signup").addEventListener("click", (e) => {
     let email = document.querySelector("#input-email").value;
+    let firstname = document.querySelector("#input-firstname").value;
+    let lastname = document.querySelector("#input-lastname").value;
     let password = document.querySelector("#input-password").value;
 
     fetch('http://localhost:3000/users/signup', {
@@ -10,6 +13,8 @@ let btnSignup = document.querySelector("#signup").addEventListener("click", (e) 
         },
         body: JSON.stringify({
             "email": email,
+            "firstname": firstname,
+            "lastname": lastname,
             "password": password
         })
     }).then(response => {
@@ -18,9 +23,10 @@ let btnSignup = document.querySelector("#signup").addEventListener("click", (e) 
         console.log(json);
         if(json.status === "succes"){
             let feedback = document.querySelector('.message');
-            
+            let timeNow  = (new Date()).getTime();
             let token = json.data.token;
             localStorage.setItem("token", token);
+            localStorage.setItem("token_expiry", timeNow);
             window.location.href = "../index/app.html";
         }
     });

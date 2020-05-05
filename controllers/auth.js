@@ -5,18 +5,24 @@ const config = require('config');
 
 const signup = async (req, res, next) => {
     let email = req.body.email;
+    let firstname = req.body.firstname;
+    let lastname = req.body.lastname;
     let password = req.body.password;
     let balance = 100;
 
     const user = new User({
         email: email,
+        firstname: firstname,
+        lastname: lastname,
         balance: balance
     });
 
     await user.setPassword(password);
     await user.save().then(result => {
+        timeNow  = (new Date()).getTime();
         let token = jwt.sign({
-            uid: result._id
+            uid: result._id,
+            "date":  timeNow
         }, config.get('jwt.secret'));
         res.json({
             "status": "succes",
@@ -46,9 +52,11 @@ const login = async (req, res, next) =>{
         }
        
         let token = jwt.sign({
-            uid: result.user._id
+            uid: result._id
         }, config.get('jwt.secret'));
 
+
+        console.log(token);
         return res.json({
             "status": "succes",
             "data": {

@@ -1,3 +1,5 @@
+localStorage.removeItem('token');
+
 let btnLogin = document.querySelector("#login").addEventListener("click", (e) => {
     let email = document.querySelector("#input-email").value;
     let password = document.querySelector("#input-password").value;
@@ -15,8 +17,10 @@ let btnLogin = document.querySelector("#login").addEventListener("click", (e) =>
         return response.json();
     }).then(json => {
         if (json.status === "succes") {
+            let time = (new Date()).getMinutes();
             let token = json.data.token;
             localStorage.setItem("token", token);
+            localStorage.setItem("token_expiry", time);
             window.location.href = "../index/app.html";
         }
         else {
