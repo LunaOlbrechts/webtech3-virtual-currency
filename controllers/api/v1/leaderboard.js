@@ -4,11 +4,14 @@ const User = require("../../../models/User");
 
 const getAll =  (req, res) => {
         const sortBalance = { balance: -1};
+        console.log("hahaha");
         User.find().sort(sortBalance).exec( (err, result) => {
             if (err) {
+                console.log("hahaha");
                 return res.json({
                     "status": "failed",
-                    "message": "Er is iets misgelopen met het ophalen van de users"
+                    "message": "Er is iets misgelopen met het ophalen van de users",
+                    "err": err
                 });
             }
             if (!err) {

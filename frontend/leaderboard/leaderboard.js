@@ -1,4 +1,4 @@
-
+const base_url = "";
 /* primus live */ 
 primus = Primus.connect("http://localhost:3000", {
     reconnect: {
@@ -9,7 +9,9 @@ primus = Primus.connect("http://localhost:3000", {
 });
 
 let updateLeaderboard = () => {
+
     fetch("http://localhost:3000/api/v1/leaderboard", {
+        
         method: "get",
         'headers': {
             'Authorization': 'Bearer ' + localStorage.getItem('token')

@@ -1,4 +1,3 @@
-localStorage.removeItem('token');
 
 let btnLogin = document.querySelector("#login").addEventListener("click", (e) => {
     let email = document.querySelector("#input-email").value;
@@ -7,7 +6,7 @@ let btnLogin = document.querySelector("#login").addEventListener("click", (e) =>
     fetch('http://localhost:3000/users/login', {
         method: "post",
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({
             "email": email,

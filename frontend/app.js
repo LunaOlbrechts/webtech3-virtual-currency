@@ -1,6 +1,4 @@
-const base_url = "";
 
-console.log(localStorage);
 /* redirect if not logged in */
 if (!localStorage.getItem("token")) {
     window.location.href = "../login/login.html";
