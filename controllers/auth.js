@@ -12,8 +12,6 @@ const signup = async (req, res, next) => {
 
     const user = new User({
         email: email,
-        firstname: firstname,
-        lastname: lastname,
         balance: balance
     });
 

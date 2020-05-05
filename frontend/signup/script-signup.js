@@ -2,8 +2,7 @@ localStorage.removeItem('token');
 
 let btnSignup = document.querySelector("#signup").addEventListener("click", (e) => {
     let email = document.querySelector("#input-email").value;
-    let firstname = document.querySelector("#input-firstname").value;
-    let lastname = document.querySelector("#input-lastname").value;
+
     let password = document.querySelector("#input-password").value;
 
     fetch('http://localhost:3000/users/signup', {
