@@ -2,12 +2,12 @@
 @import 'typography';
 
 @import 'components/buttons';
-@import 'components/forms';
 @import 'components/containers';
+@import 'components/forms';
+@import 'components/header';
 @import 'components/leaderboard';
-@import 'components/header';
-@import 'components/header';
 @import 'components/navigation';
+@import 'components/transfers';
 
 
 /* ./node_modules/.bin/sass --watch ./frontend/source/sass/app.scss:./frontend/dist/app.css */

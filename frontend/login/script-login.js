@@ -21,7 +21,7 @@ let btnLogin = document.querySelector("#login").addEventListener("click", (e) =>
             let token = json.data.token;
             localStorage.setItem("token", token);
             localStorage.setItem("token_expiry", time);
-            window.location.href = "../index/app.html";
+            window.location.href = "../leaderboard/leaderboard.html";
         }
         else {
             let feedback = document.querySelector('.message');
