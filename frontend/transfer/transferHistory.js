@@ -44,7 +44,7 @@ let appendTransfers = () => {
                 <div class="transfer__item transfer__amount"><p class="transfer__amount--received">+${item.amount}</p></div>
                 </div>`
             }
-            document.querySelector('.history__container').insertAdjacentHTML('afterend', transferItem)
+            document.querySelector('.header').insertAdjacentHTML('afterend', transferItem)
         });
     }).catch(err => {
         console.log(err)

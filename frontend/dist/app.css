@@ -1,7 +1,3 @@
-body{
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 h1, h2 {
   display: flex;
   justify-content: center;
@@ -39,9 +35,9 @@ h1, h2 {
 .form__container {
   display: grid;
   grid-template-columns: 3fr;
-  grid-template-rows: 1fr 2fr 1fr 2fr 2fr 1fr;
-  row-gap: 20px;
-  height: 450px;
+  grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr;
+  row-gap: 10px;
+  height: 500px;
   align-self: center;
   justify-self: center;
 }
@@ -60,6 +56,72 @@ input {
   color: #000;
 }
 
+.title {
+  display: grid;
+  justify-self: start;
+  margin-top: 10px;
+}
+
+.title__firstname {
+  justify-items: start;
+  row-gap: 5px;
+  grid-column: 1;
+  grid-row: 1/span 1;
+}
+
+#input-firstname {
+  grid-column: 1;
+  grid-row: 2/span 1;
+}
+
+.title__lastname {
+  justify-items: start;
+  row-gap: 5px;
+  grid-column: 2;
+  grid-row: 3/span 1;
+}
+
+#input-lastname {
+  grid-column: 1;
+  grid-row: 4/span 1;
+}
+
+.title__email {
+  justify-items: start;
+  row-gap: 5px;
+  grid-column: 1;
+  grid-row: 5/span 1;
+}
+
+#input-email {
+  grid-column: 1;
+  grid-row: 6/span 1;
+}
+
+.title__password {
+  justify-items: start;
+  row-gap: 5px;
+  grid-column: 1;
+  grid-row: 7/span 1;
+}
+
+#input-password {
+  grid-column: 1;
+  grid-row: 8/span 1;
+}
+
+.message {
+  width: 100%;
+  text-align: center;
+}
+
+#btn-signup {
+  justify-self: center;
+  row-gap: 5px;
+  grid-column: 1;
+  grid-row: 9/span 1;
+}
+
 .container {
   display: grid;
   justify-items: center;
@@ -69,16 +131,10 @@ input {
   height: 100vh;
 }
 
-.header {
+.history__container {
   display: flex;
-  font-size: 1.5em;
   flex-direction: column;
-  background-color: #fd823e;
-  text-align: center;
-}
-
-.header__text{
-  color: white;
+  background-color: #FD823E;
 }
 
 .base__container {
@@ -97,74 +153,6 @@ input {
   display: grid;
 }
 
-.score {
-  border-top: 1px solid rgba(128, 128, 128, 0.568);
-  display: grid;
-  grid-template-columns: 3fr 7fr 3fr;
-  grid-template-rows: none;
-}
-
-.score__place {
-  color: black;
-  grid-column: 1/1;
-  font-size: 1.4em;
-  justify-self: center;
-}
-
-.score--gold{
-  color: #FFD700;
-  font-weight: bold;
-  grid-column: 1/1;
-  font-size: 1.9em;
-  justify-self: center;
-}
-
-.score--silver{
-  color: #C0C0C0;
-  font-weight: bold;
-  grid-column: 1/1;
-  font-size: 1.9em;
-  justify-self: center;
-}
-
-.score--bronze{
-  color: #cd7f32;
-  font-weight: bold;
-  grid-column: 1/1;
-  font-size: 1.9em;
-  justify-self: center;
-}
-
-.score__name{
-  grid-column: 2/2;
-  justify-self: start;
-  align-self: center;
-}
-
-.score__balance{
-  grid-column: 3/3;
-  justify-self: center;
-  align-self: center;
-}
-
-.nav{
-  background-color: #b6b6b6;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-}
-
-.nav__link{
-  text-decoration: none;
-  list-style: none;
-  color: white;
-  justify-self: center;
-  align-self: center;
-}
 /* ./node_modules/.bin/sass --watch ./frontend/source/sass/app.scss:./frontend/dist/app.css */
 
 /*# sourceMappingURL=app.css.map */

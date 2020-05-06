@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../normalize.css">
-    <link rel="stylesheet" href="../style.css"> <!-- remove once fully transfered to scss-->
     <link rel="stylesheet" href="../dist/app.css">
     <title>Registreren</title>
 </head>
@@ -15,6 +14,12 @@
             <div class="message"></div>
             <h2 form-title>Registreren</h2>
             <div class="form__container">
+            
+                <div class="title"><label class="title-firstname" for="firstname">Voornaam</label></div>
+                <input class="form-control" type="text" id="input-firstname" name='firstname' placeholder="Voornaam">
+
+                <div class="title"><label class="title-lastname" for="lastname">Achternaam</label></div>
+                <input class="form-control" type="text" id="input-lastname" name='lastname' placeholder="Achternaam">
 
                 <div class="title"><label class="title-email" for="email">E-mail</label></div>
                 <input class="form-control" type="text" id="input-email" name='email' placeholder="Email">
@@ -22,9 +27,7 @@
                 <div class="title"><label class="title-password" for="password">Wachtwoord</label></div>
                 <input class="form-control" type="password" id="input-password" name='password' placeholder="Wachtwoord">
 
-                <div class="btn__container">
-                    <button class="btn btn--primary" id="signup">Registreren</button>
-                </div>
+                <button class="btn btn--primary" id="btn-signup">Registreren</button>
 
                 <div>
                     <a href="../login/login.html">Heb je al een account? Log hier in</a>
