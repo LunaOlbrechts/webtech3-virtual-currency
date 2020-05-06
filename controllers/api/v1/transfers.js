@@ -112,6 +112,16 @@ const create = (req, res, next) => {
     })
 }
 
+const getTransfer  = (req, res) => {
+    Transfer.findOne({_id: req.params.id}, (err, docs) => {
+        res.json({
+            "status": "success",
+            "transfer": docs
+        })
+    }) 
+}
+
 module.exports.getAll = getAll
 module.exports.getUser = getUser
 module.exports.create = create
+module.exports.getTransfer = getTransfer
