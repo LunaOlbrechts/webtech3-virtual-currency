@@ -6,6 +6,7 @@
     height: 500px;   
     align-self: center;
     justify-self: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 input{
@@ -28,6 +29,10 @@ input{
     margin-top: 10px;
 }
 
+.title_label{
+    justify-items: start;
+}
+
 .title__firstname{
     justify-items: start;
     row-gap: 5px;
@@ -35,43 +40,40 @@ input{
     grid-row: 1/ span 1;
 }
 
-#input-firstname{
+#input--firstname{
     grid-column: 1;
     grid-row: 2/ span 1;
 }
 
-.title__lastname{
-    justify-items: start;
+.title--lastname{
     row-gap: 5px;
     grid-column: 2;
     grid-row: 3/ span 1;
 }
 
-#input-lastname{
+#input--lastname{
     grid-column: 1;
     grid-row: 4/ span 1;
 }
 
-.title__email{
-    justify-items: start;
+.title--email{
     row-gap: 5px;
     grid-column: 1;
     grid-row: 5/ span 1;
 }
 
-#input-email{
+#input--email{
     grid-column: 1;
     grid-row: 6/ span 1;
 }
 
-.title__password{
-    justify-items: start;
+.title--password{
     row-gap: 5px;
     grid-column: 1;
     grid-row: 7/ span 1;
 }
 
-#input-password{
+#input--password{
     grid-column: 1;
     grid-row: 8/ span 1;
 }
@@ -81,7 +83,7 @@ input{
     text-align: center;
 }
 
-#btn-signup{
+#btn--signup{
     justify-self: center;
     row-gap: 5px;
     grid-column: 1;

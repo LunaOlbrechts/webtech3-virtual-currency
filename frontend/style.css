@@ -48,26 +48,3 @@ body{
 .balance__container h1 {
     color: #fff;
 }
-
-.title{
-    display: grid;
-    justify-self: start;
-    margin-top: 30px;
-}
-
-.title__email{
-    justify-items: start;
-    row-gap: 5px;
-    grid-column: 1;
-    grid-row: 1/ span 1;
-}
-
-#input-email{
-    grid-column: 1;
-    grid-row: 2/ span 1;
-}
-
-.message {
-    width: 100%;
-    text-align: center;
-}
