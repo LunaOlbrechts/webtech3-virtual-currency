@@ -1,0 +1,18 @@
+.nav{
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid rgb(211, 211, 211);
+}
+
+.nav__link{
+    text-decoration: none;
+    color: gray;
+    justify-self: center;
+    align-self: center;
+}
