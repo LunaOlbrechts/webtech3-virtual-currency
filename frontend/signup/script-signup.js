@@ -6,28 +6,35 @@ let btnSignup = document.querySelector("#btn--signup").addEventListener("click",
     let lastname = document.querySelector("#input-lastname").value;
     let password = document.querySelector("#input-password").value;
 
-    fetch('http://localhost:3000/users/signup', {
-        method: "post",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "email": email,
-            "firstname": firstname,
-            "lastname": lastname,
-            "password": password
-        })
-    }).then(response => {
-        return response.json();
-    }).then(json => {
-        console.log(json);
-        if(json.status === "succes"){
-            let feedback = document.querySelector('.message');
-            let timeNow  = (new Date()).getTime();
-            let token = json.data.token;
-            localStorage.setItem("token", token);
-            localStorage.setItem("token_expiry", timeNow);
-            window.location.href = "../leaderboard/leaderboard.html";
-        }
-    });
+    let emailCheck = email.split("@");
+    if(emailCheck[1] == "student.thomasmore.be"){
+        console.log(emailCheck[1]);
+        fetch('http://localhost:3000/users/signup', {
+            method: "post",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "email": email,
+                "firstname": firstname,
+                "lastname": lastname,
+                "password": password
+            })
+        }).then(response => {
+            return response.json();
+        }).then(json => {
+            console.log(json);
+            if(json.status === "succes"){
+                let feedback = document.querySelector('.message');
+                let timeNow  = (new Date()).getTime();
+                let token = json.data.token;
+                localStorage.setItem("token", token);
+                localStorage.setItem("token_expiry", timeNow);
+                window.location.href = "../leaderboard/leaderboard.html";
+            }
+        });
+    }
+    else{
+        document.querySelector(".message").innerHTML = "Sorry het email moet eindigen met @student.thomasmore.be";
+    }
 });
