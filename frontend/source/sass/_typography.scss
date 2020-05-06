@@ -2,3 +2,8 @@ h1, h2 {
     display: flex;
     justify-content: center;
 }
+
+.transfer__link{
+    text-decoration: none;
+    color: $color-black;
+}

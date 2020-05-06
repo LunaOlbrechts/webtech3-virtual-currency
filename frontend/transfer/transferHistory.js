@@ -30,19 +30,19 @@ let appendTransfers = () => {
         return result.json();
     }).then(json => {
         json.data.transactions.forEach(item => {
-            if(item.sender == email /* change test@test.com from hardcoded to logged in user id */) {
-                var transferItem = `<div class="transfer"> 
+            if(item.sender == email) {
+                var transferItem = `<a class="transfer__link" href="./transferDetail.html?detail=${item._id}"><div class="transfer"> 
                 <div class="transfer__item transfer__avatar"></div>
                 <div class="transfer__item transfer__name"><p>${item.receiver}</p></div>
                 <div class="transfer__item transfer__amount"><p class="transfer__amount--send">-${item.amount}</p></div>
-                </div>`
+                </div></a>`
                 
             }else {
-                var transferItem = `<div class="transfer"> 
+                var transferItem = `<a class="transfer__link" href="./transferDetail.html?detail=${item._id}"><div class="transfer"> 
                 <div class="transfer__item transfer__avatar"></div>
                 <div class="transfer__item transfer__name"><p>${item.sender}</p></div>
                 <div class="transfer__item transfer__amount"><p class="transfer__amount--received">+${item.amount}</p></div>
-                </div>`
+                </div></a>`
             }
             document.querySelector('.header').insertAdjacentHTML('afterend', transferItem)
         });

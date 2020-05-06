@@ -3,6 +3,11 @@ h1, h2 {
   justify-content: center;
 }
 
+.transfer__link {
+  text-decoration: none;
+  color: #000;
+}
+
 .btn__container {
   grid-column: 1;
   grid-row: 5/5;
