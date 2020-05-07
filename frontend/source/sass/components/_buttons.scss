@@ -1,15 +1,11 @@
-.btn__container{ //div around btn
-    grid-column: 1;
-    grid-row: 5/5;
-    text-align: center;
-}
-
 .btn{
     width: 150px;
     font-size: 1em;
+    justify-self: center;
+    row-gap: 5px;
 }
 
-.btn--primary {
+.btn--primary{
     color: $color-white;
     background-color: $color-default;
     padding: 0.5em 1em;
@@ -17,12 +13,12 @@
     border: none;
 }
 
-.btn--login {
+.btn--login{
     background-color: $color-login-input;
     color: $color-black;
 }
 
-.btn--xl {
+.btn--xl{
     font-size: 1.5em;
     padding: 0.7em 1em;
 }

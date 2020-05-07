@@ -8,28 +8,24 @@
     <title>Coins versturen</title>
 </head>
 <body>
-     <!-- front end doesn't work yet -->
-    <div class="base__container">
-        <div class=balance__container>
+    <div class="header header--xl">
+        <div class="header__title__container">
             <h2 form-title>Huidig Balans:</h2>
-            <h1 class="balance">XXXX</h1>
+            <h1 class="header__title--white" id="balance">XXXX</h1>
         </div>
     </div>
 
-    <div class="transfer__container">
-        <div class="message"> <p class="messageField"></p> </div>
+    <div class="container--top">
+        <div class="message"> <p class="message__field"></p> </div>
         
         <div class="form__container">
+            <div class="title"><label for="amount">Aantal</label></div>
+            <input class="form__field" type="number" id="input__amount" name='amount'>
 
-            <div class="title"><label class="title--amount" for="amount">Aantal</label></div>
-            <input class="form-control" type="number" id="input__amount" name='amount'>
+            <div class="title"><label for="receiver">Ontvanger</label></div>
+            <input class="form__field" type="text" id="input__receiver" name='receiver'>
 
-            <div class="title"><label class="title--receiver" for="receiver">Ontvanger</label></div>
-            <input class="form-control" type="text" id="input__receiver" name='receiver'>
-
-            <div class="btn__container">
-                <button class="btn btn--primary btn--xl" id="transfer">Versturen</button>
-            </div>
+            <button class="btn btn--primary btn--xl" id="transfer">Versturen</button>
         </div>
     </div>
 

@@ -29,20 +29,23 @@ let appendTransfers = () => {
     }).then(result => {
         return result.json();
     }).then(json => {
-    let list = document.querySelector('.scores')
-    console.log(list)
+    let list = document.querySelector('.list')
     list.innerHTML = ""
         json.data.transactions.forEach(item => {
             if(item.sender == email) { 
               var name = item.receiver
+              var color = "transfer__amount--send"
+              var sign = "-"
             }else {
               var name = item.sender
+              var color = "transfer__amount--received"
+              var sign = "+"
             }
 
-            let transferItem = `<a class="transfer__link" href="./transferDetail.html?detail=${item._id}"><div class="transfer"> 
-            <div class="transfer__item transfer__avatar"></div>
-            <div class="transfer__item transfer__name"><p>` + name  + `</p></div>
-            <div class="transfer__item transfer__amount"><p class="transfer__amount--send">-${item.amount}</p></div>
+            let transferItem = `<a class="link" href="./transferDetail.html?detail=${item._id}"><div class="list__row"> 
+            <div class="avatar"></div>
+            <div class="list__name"><p>` + name  + `</p></div>
+            <div class="list__balance list__balance--right"><p class="` + color + `"> ` + sign + `${item.amount}</p></div>
             </div></a>`
                 
             list.insertAdjacentHTML('afterbegin', transferItem)

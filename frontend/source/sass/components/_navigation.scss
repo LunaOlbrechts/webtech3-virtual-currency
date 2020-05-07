@@ -1,5 +1,5 @@
 .nav{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: $base-fonts;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: 60px;

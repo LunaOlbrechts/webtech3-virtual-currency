@@ -24,7 +24,7 @@ let btnLogin = document.querySelector("#login").addEventListener("click", (e) =>
             window.location.href = "../leaderboard/leaderboard.html";
         }
         else {
-            let feedback = document.querySelector('.message');
+            let feedback = document.querySelector('.message__field');
             feedback.textContent = "Inloggen is niet gelukt, controlleer of jouw email en wachtwoord correct zijn";
         }
     })

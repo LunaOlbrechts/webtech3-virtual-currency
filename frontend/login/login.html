@@ -10,19 +10,17 @@
 
 <body>
     <div class="container">
-            <div class="message"></div>
             <h2 form-title>Inloggen</h2>
+            <div class="message"><p class="message__field"></p></div>
+
             <div class="form__container">
+                <div class="title"><label for="email">E-mail</label></div>
+                <input class="form__field" type="text" id="input-email" name='email' placeholder="Email">
 
-                <div class="title"><label class="title-email" for="email">E-mail</label></div>
-                <input class="form-control" type="text" id="input-email" name='email' placeholder="Email">
+                <div class="title"><label" for="password">Password</label></div>
+                <input class="form__field" type="password" id="input-password" name='password' placeholder="Wachtwoord">
 
-                <div class="title"><label class="title-password" for="password">Password</label></div>
-                <input class="form-control" type="password" id="input-password" name='password' placeholder="Wachtwoord">
-
-                <div class="btn__container">
-                    <button class="btn btn--primary btn--login" id="login">Inloggen</button>
-                </div>
+                <button class="btn btn--primary btn--login" id="login">Inloggen</button>
 
                 <div>
                     <a href="../signup/signup.html">Heb je nog geen account? Registreer je hier</a>
