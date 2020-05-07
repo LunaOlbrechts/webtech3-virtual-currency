@@ -1,4 +1,10 @@
 const base_url = "";
+
+/* redirect if user has no valid token */
+if (!localStorage.getItem("token")) {
+    window.location.href = "../login/login.html";
+}
+
 /* primus live */ 
 primus = Primus.connect("http://localhost:3000", {
     reconnect: {
@@ -36,7 +42,6 @@ primus.on('data', (json) => {
 });
 
 /* append a score to the leaderboard*/ 
-
 let appendScore = (json) => {
     json.data.forEach(element => {
         console.log(element);

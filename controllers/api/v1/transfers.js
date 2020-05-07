@@ -12,7 +12,6 @@ const getAll =  (req, res) => {
             })
         }
     })
-    
 }
 
 //GET ONE MESSAGE
@@ -25,11 +24,12 @@ const getUser = (req, res) => {
     }) 
 }
 
-
 const create = (req, res, next) => {
     let transfer = new Transfer()
     transfer.sender = req.user.email,
     transfer.amount = req.body.amount,
+    transfer.reason = req.body.reason,
+    transfer.comment = req.body.comment,
     transfer.receiver = req.body.receiver
 
     User.find({email: transfer.receiver}, (err, docs) => {

@@ -30,6 +30,7 @@ let appendTransfers = () => {
         return result.json();
     }).then(json => {
         json.data.transactions.forEach(item => {
+            
             if(item.sender == email) {
                 var transferItem = `<a class="transfer__link" href="./transferDetail.html?detail=${item._id}"><div class="transfer"> 
                 <div class="transfer__item transfer__avatar"></div>

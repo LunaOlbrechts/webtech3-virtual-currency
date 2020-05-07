@@ -23,12 +23,17 @@ let amountField = document.querySelector('#input__amount')
 let receiverField = document.querySelector('#input__receiver')
 let messageField = document.querySelector('.messageField')
 let balanceCounter = document.querySelector('.balance')
+let transferReason = document.querySelector('#transferReason')
+let freeComment = document.querySelector("#comment")
 
 /* post transfer */
 transferBtn.addEventListener('click', e => {
     let amount = amountField.value
     let receiver = receiverField.value 
-    if(isEmpty(amount) || isEmpty(receiver)) {
+    let reason = transferReason.value
+    let comment = freeComment.value
+
+    if(isEmpty(amount) || isEmpty(receiver) || isEmpty(reason)) {
         messageField.innerHTML = "gelieve alle velden in te vullen"
     }else {
         fetch("http://localhost:3000/api/v1/transfers", {
@@ -39,7 +44,9 @@ transferBtn.addEventListener('click', e => {
         }, 
         body: JSON.stringify({
             "amount": amount,
-            "receiver": receiver
+            "receiver": receiver,
+            "reason": reason,
+            "comment": comment
         })
         }).then(result => {
             return result.json();
@@ -73,6 +80,7 @@ let updateBalance = () => {
         console.log(err)
     });
 }
+
 updateBalance()
 
 function isEmpty(value){

@@ -3,17 +3,21 @@
     grid-template-columns:  3fr;
     grid-template-rows:  1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr; 
     row-gap: 10px;
-    height: 500px;   
+    height: 600px;   
+    min-width: 300px;
     align-self: center;
     justify-self: center;
     font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin-bottom: 110px;
 }
 
 input{
     height: 40px;
     background-color: $color-login-input;
     border-radius: 4px;
-    color: $color-white;
+    color: $color-black;
     border: 1px solid $color-login-input-border;
 }
 
