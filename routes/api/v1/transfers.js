@@ -10,5 +10,7 @@ router.get("/", transfersController.getAll)
 
 /* GET /api/v1/transfers/balance */
 router.get("/user", transfersController.getUser)
+
+router.get("/:id", transfersController.getTransfer)
   
 module.exports = router

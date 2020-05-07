@@ -1,26 +1,33 @@
 const User = require('../models/User');
 const passport = require('../passport/passport');
 const jwt = require('jsonwebtoken');
+const config = require('config');
 
 const signup = async (req, res, next) => {
     let email = req.body.email;
+    let firstname = req.body.firstname;
+    let lastname = req.body.lastname;
     let password = req.body.password;
     let balance = 100;
 
     const user = new User({
         email: email,
+        firstname: firstname,
+        lastname: lastname,
         balance: balance
     });
+
     await user.setPassword(password);
     await user.save().then(result => {
+
         let token = jwt.sign({
             uid: result._id
-        }, "MdPa0ùecv");
+        }, config.get('jwt.secret'));
+
         res.json({
             "status": "succes",
             "data": {
-                "token": token,
-                "result": result
+                "token": token
             }
         });
     }).catch(error => {
@@ -34,10 +41,11 @@ const signup = async (req, res, next) => {
     });
 }
 
-const login = async (req, res, next) =>{
-    const  user  = await User.authenticate()(req.body.email, req.body.password).then(result => {
-        if(!result.user){
-           return res.json({
+const login = async (req, res, next) => {
+    const user = await User.authenticate()(req.body.email, req.body.password).then(result => {
+        console.log(result.user);
+        if (!result.user) {
+            return res.json({
                 "status": "fail",
                 "message": "login failed"
             });
@@ -45,7 +53,7 @@ const login = async (req, res, next) =>{
 
         let token = jwt.sign({
             uid: result.user._id
-        }, "MdPa0ùecv");
+        }, config.get('jwt.secret'));
 
         return res.json({
             "status": "succes",

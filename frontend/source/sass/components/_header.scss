@@ -1,0 +1,27 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 23vh;
+    background-color: $color-default;
+}
+
+.header--xl{
+    height: 33vh;
+}
+
+.header__title__container{
+    width: 100%;
+    margin-top: 5vh;
+}
+
+.header__title{
+    color: $color-white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    align-self: center;
+}
+
+.header__title--white{
+    color: $color-white;
+}

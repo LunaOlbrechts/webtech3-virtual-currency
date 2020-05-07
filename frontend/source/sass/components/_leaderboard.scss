@@ -1,0 +1,22 @@
+.score{
+    color: $color-black;
+    justify-self: center;
+}
+
+.score--gold{
+    grid-column: 1/ span 1;
+    color: $score-gold;
+    justify-self: center;
+}
+
+.score--silver{
+    grid-column: 1/ span 1;
+    color: $score-silver;
+    justify-self: center;
+}
+
+.score--bronze{
+    grid-column: 1/ span 1;
+    color: $score-bronze;
+    justify-self: center;
+}

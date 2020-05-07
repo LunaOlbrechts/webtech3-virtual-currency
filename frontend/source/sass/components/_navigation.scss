@@ -1,0 +1,19 @@
+.nav{
+    font-family: $base-fonts;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid $color-navBorder;
+    background-color: $color-white;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: $color-gray;
+    justify-self: center;
+    align-self: center;
+}

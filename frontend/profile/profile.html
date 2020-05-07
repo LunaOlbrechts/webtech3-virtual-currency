@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../normalize.css">
-    <link rel="stylesheet" href="../dist/app.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>WELCOME</h1>
-    
+    <div class="header">
+        <h5 class="header__text">Leaderboard</h5>
+    </div>
+    <div class="profile">
+
+    </div>
 
     <nav class="nav">
         <a class="nav__link" href="../leaderboard/leaderboard.html">Leaderboard</a>
         <a class="nav__link" href="../transfer/transfer.html">Transaction</a>
         <a class="nav__link" href="../transfer/transferHistory.html">History</a>
     </nav>
+
+    <script src="http://localhost:3000/primus/primus.js"></script>
     <script src="../app.js"></script>
+    <script src="leaderboard.js"></script>
 </body>
 </html>

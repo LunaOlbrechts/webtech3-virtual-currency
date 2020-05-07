@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../normalize.css">
     <link rel="stylesheet" href="../dist/app.css">
-    <title>Transfer geschiedenis</title>
+    <title>Leaderboard</title>
 </head>
 <body>
-
     <div class="header">
-        <div class="header__title"><h3>Recente transacties</h3></div>
+        <h5 class="header__title">Leaderboard</h5>
     </div>
 
-    <div class="list">
-        
+    <div class="list" id="leaderboard">
+
     </div>
-    
+
     <nav class="nav">
         <a class="nav__link" href="../leaderboard/leaderboard.html"><img src="/frontend/icons/emoji_events-24px.svg"></a>
         <a class="nav__link" href="../transfer/transfer.html"><img src="/frontend/icons/swap_vert-24px.svg"></a>
@@ -24,6 +23,8 @@
     </nav>
 
     <script src="http://localhost:3000/primus/primus.js"></script>
-    <script src="./transferHistory.js"></script>
+    <script src="../app.js"></script>
+    <script src="leaderboard.js"></script>
+
 </body>
 </html>

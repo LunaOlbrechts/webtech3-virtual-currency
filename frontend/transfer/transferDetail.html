@@ -5,25 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../normalize.css">
     <link rel="stylesheet" href="../dist/app.css">
-    <title>Transfer geschiedenis</title>
+    <title>Transfer Details</title>
 </head>
 <body>
 
-    <div class="header">
-        <div class="header__title"><h3>Recente transacties</h3></div>
+    <div class="base__container">
+        <div class=balance__container>
+            <h2 form-title>transfer Details</h2>
+            <h1 class="balance">XXXX </h1> <!-- hier komt de hoeveelheid die verstuurd was -->
+        </div>
     </div>
 
-    <div class="list">
+    <div class="transfer__container">
+        <div class="message"> <p class="messageField"></p> </div>
         
+        <div class="form__container">
+
+            <h2>van:</h2>
+            <p class="sender__name">temp placeholder</p>
+
+            <h2>naar:</h2>
+            <p class="receiver__name">temp placeholder</p>
+
+        </div>
     </div>
-    
+
     <nav class="nav">
         <a class="nav__link" href="../leaderboard/leaderboard.html"><img src="/frontend/icons/emoji_events-24px.svg"></a>
         <a class="nav__link" href="../transfer/transfer.html"><img src="/frontend/icons/swap_vert-24px.svg"></a>
         <a class="nav__link" href="../transfer/transferHistory.html"><img src="/frontend/icons/history-24px.svg" alt=""></a>
     </nav>
 
-    <script src="http://localhost:3000/primus/primus.js"></script>
-    <script src="./transferHistory.js"></script>
+    <script src="transferDetail.js"></script>
 </body>
 </html>

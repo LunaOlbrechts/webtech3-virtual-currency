@@ -1,0 +1,8 @@
+{
+    "Database": {
+        "conn": "mongodb+srv://Luna_O:Sintamands9200@cluster0-aj7au.mongodb.net/test?retryWrites=true&w=majority"
+    },
+    "jwt":{
+        "secret": "MdPa0ùecv"
+    }
+}

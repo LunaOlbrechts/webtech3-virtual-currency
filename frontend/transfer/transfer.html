@@ -4,35 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../normalize.css">
-    <link rel="stylesheet" href="../style.css"> <!-- remove once fully transfered to scss-->
     <link rel="stylesheet" href="../dist/app.css">
     <title>Coins versturen</title>
 </head>
 <body>
-     <!-- front end doesn't work yet -->
-    <div class="base__container">
-        <div class=balance__container>
+    <div class="header header--xl">
+        <div class="header__title__container">
             <h2 form-title>Huidig Balans:</h2>
-            <h1 class="balance">XXXX</h1>
+            <h1 class="header__title--white" id="balance">XXXX</h1>
         </div>
     </div>
 
-    <div class="transfer__container">
-        <div class="message"> <p class="messageField"></p> </div>
+    <div class="container--top">
+        <div class="message"> <p class="message__field"></p> </div>
         
         <div class="form__container">
+            <div class="title"><label for="amount">Aantal</label></div>
+            <input class="form__field" type="number" id="input__amount" name='amount'>
 
-            <div class="title"><label class="title--amount" for="amount">Aantal</label></div>
-            <input class="form-control" type="number" id="input__amount" name='amount'>
+            <div class="title"><label for="receiver">Ontvanger</label></div>
+            <input class="form__field" type="text" id="input__receiver" name='receiver'>
 
-            <div class="title"><label class="title--receiver" for="receiver">Ontvanger</label></div>
-            <input class="form-control" type="text" id="input__receiver" name='receiver'>
-
-            <div class="btn__container">
-                <button class="btn btn--primary btn--xl" id="transfer">Versturen</button>
-            </div>
+            <button class="btn btn--primary btn--xl" id="transfer">Versturen</button>
         </div>
     </div>
+
+    <nav class="nav">
+        <a class="nav__link" href="../leaderboard/leaderboard.html"><img src="/frontend/icons/emoji_events-24px.svg"></a>
+        <a class="nav__link" href="../transfer/transfer.html"><img src="/frontend/icons/swap_vert-24px.svg"></a>
+        <a class="nav__link" href="../transfer/transferHistory.html"><img src="/frontend/icons/history-24px.svg" alt=""></a>
+    </nav>
+
     <script src="http://localhost:3000/primus/primus.js"></script>
     <script src="./transfer.js"></script>
 </body>

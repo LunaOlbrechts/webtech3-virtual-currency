@@ -1,3 +1,5 @@
+localStorage.removeItem('token');
+
 let btnLogin = document.querySelector("#login").addEventListener("click", (e) => {
     let email = document.querySelector("#input-email").value;
     let password = document.querySelector("#input-password").value;
@@ -5,7 +7,7 @@ let btnLogin = document.querySelector("#login").addEventListener("click", (e) =>
     fetch('http://localhost:3000/users/login', {
         method: "post",
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({
             "email": email,
@@ -15,12 +17,14 @@ let btnLogin = document.querySelector("#login").addEventListener("click", (e) =>
         return response.json();
     }).then(json => {
         if (json.status === "succes") {
+            let time = (new Date()).getMinutes();
             let token = json.data.token;
             localStorage.setItem("token", token);
-            window.location.href = "../index/app.html";
+            localStorage.setItem("token_expiry", time);
+            window.location.href = "../leaderboard/leaderboard.html";
         }
         else {
-            let feedback = document.querySelector('.message');
+            let feedback = document.querySelector('.message__field');
             feedback.textContent = "Inloggen is niet gelukt, controlleer of jouw email en wachtwoord correct zijn";
         }
     })

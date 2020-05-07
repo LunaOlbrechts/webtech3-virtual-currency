@@ -29,22 +29,26 @@ let appendTransfers = () => {
     }).then(result => {
         return result.json();
     }).then(json => {
+    let list = document.querySelector('.list')
+    list.innerHTML = ""
         json.data.transactions.forEach(item => {
-            if(item.sender == email /* change test@test.com from hardcoded to logged in user id */) {
-                var transferItem = `<div class="transfer"> 
-                <div class="transfer__item transfer__avatar"></div>
-                <div class="transfer__item transfer__name"><p>${item.receiver}</p></div>
-                <div class="transfer__item transfer__amount"><p class="transfer__amount--send">-${item.amount}</p></div>
-                </div>`
-                
+            if(item.sender == email) { 
+              var name = item.receiver
+              var color = "transfer__amount--send"
+              var sign = "-"
             }else {
-                var transferItem = `<div class="transfer"> 
-                <div class="transfer__item transfer__avatar"></div>
-                <div class="transfer__item transfer__name"><p>${item.sender}</p></div>
-                <div class="transfer__item transfer__amount"><p class="transfer__amount--received">+${item.amount}</p></div>
-                </div>`
+              var name = item.sender
+              var color = "transfer__amount--received"
+              var sign = "+"
             }
-            document.querySelector('.history__container').insertAdjacentHTML('afterend', transferItem)
+
+            let transferItem = `<a class="link" href="./transferDetail.html?detail=${item._id}"><div class="list__row"> 
+            <div class="avatar"></div>
+            <div class="list__name"><p>` + name  + `</p></div>
+            <div class="list__balance list__balance--right"><p class="` + color + `"> ` + sign + `${item.amount}</p></div>
+            </div></a>`
+                
+            list.insertAdjacentHTML('afterbegin', transferItem)
         });
     }).catch(err => {
         console.log(err)

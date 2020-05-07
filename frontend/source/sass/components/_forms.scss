@@ -1,23 +1,31 @@
-.form__container{ // div around inputs
+.form__container{
     display: grid;
     grid-template-columns:  3fr;
-    grid-template-rows:  1fr 2fr 1fr 2fr 2fr 1fr; 
-    row-gap: 20px;
-    height: 450px;   
+    grid-template-rows:  1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr; 
+    row-gap: 10px;
+    height: 500px;   
     align-self: center;
     justify-self: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-input{
+.form__field{
     height: 40px;
     background-color: $color-login-input;
     border-radius: 4px;
     color: $color-white;
     border: 1px solid $color-login-input-border;
+    padding-left: 0.5em;
+    font-size: 1.2em;
 }
 
-#input--amount, #input--receiver {
-    border: 1px solid $color-default;
-    background-color: transparent;
-    color: $color-black;
+.title{
+    display: grid;
+    justify-self: start;
+    margin-top: 10px;
+}
+
+.message{
+    width: 100%;
+    text-align: center;
 }
