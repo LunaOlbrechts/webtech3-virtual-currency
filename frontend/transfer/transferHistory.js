@@ -31,7 +31,7 @@ let appendTransfers = () => {
     }).then(json => {
         json.data.transactions.forEach(item => {
             
-            if(item.sender == email) {
+            if(item.sender == name) {
                 var transferItem = `<a class="transfer__link" href="./transferDetail.html?detail=${item._id}"><div class="transfer"> 
                 <div class="transfer__item transfer__avatar"></div>
                 <div class="transfer__item transfer__name"><p>${item.receiver}</p></div>
@@ -53,7 +53,7 @@ let appendTransfers = () => {
 } 
 
  /* get user */
- let email;
+ let name;
 fetch("http://localhost:3000/api/v1/transfers/user", {
 method: "get",
 'headers': {
@@ -63,7 +63,7 @@ method: "get",
 }).then(result => {
     return result.json();
 }).then(json => {
-    email = json.user.email
+    name = json.user.fullname
     appendTransfers()
 }).catch(err => {
     console.log(err)
