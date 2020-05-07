@@ -29,22 +29,23 @@ let appendTransfers = () => {
     }).then(result => {
         return result.json();
     }).then(json => {
+    let list = document.querySelector('.scores')
+    console.log(list)
+    list.innerHTML = ""
         json.data.transactions.forEach(item => {
-            if(item.sender == email) {
-                var transferItem = `<a class="transfer__link" href="./transferDetail.html?detail=${item._id}"><div class="transfer"> 
-                <div class="transfer__item transfer__avatar"></div>
-                <div class="transfer__item transfer__name"><p>${item.receiver}</p></div>
-                <div class="transfer__item transfer__amount"><p class="transfer__amount--send">-${item.amount}</p></div>
-                </div></a>`
-                
+            if(item.sender == email) { 
+              var name = item.receiver
             }else {
-                var transferItem = `<a class="transfer__link" href="./transferDetail.html?detail=${item._id}"><div class="transfer"> 
-                <div class="transfer__item transfer__avatar"></div>
-                <div class="transfer__item transfer__name"><p>${item.sender}</p></div>
-                <div class="transfer__item transfer__amount"><p class="transfer__amount--received">+${item.amount}</p></div>
-                </div></a>`
+              var name = item.sender
             }
-            document.querySelector('.header').insertAdjacentHTML('afterend', transferItem)
+
+            let transferItem = `<a class="transfer__link" href="./transferDetail.html?detail=${item._id}"><div class="transfer"> 
+            <div class="transfer__item transfer__avatar"></div>
+            <div class="transfer__item transfer__name"><p>` + name  + `</p></div>
+            <div class="transfer__item transfer__amount"><p class="transfer__amount--send">-${item.amount}</p></div>
+            </div></a>`
+                
+            list.insertAdjacentHTML('afterbegin', transferItem)
         });
     }).catch(err => {
         console.log(err)
