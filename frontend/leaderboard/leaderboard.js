@@ -47,13 +47,8 @@ let appendScore = (json) => {
         if (element.place === 1) {
             var score = `<div class="list__row">
                 <p class="score score--gold">${element.place}</p>
-<<<<<<< HEAD
                 <p class="score score__name">${element.fullname}</p>
                 <p class="score score__balance">${element.balance}</p>
-=======
-                <p class="score list__name">${element.firstname} ${element.lastname}</p>
-                <p class="score list__balance">${element.balance}</p>
->>>>>>> b7502c22b67ea77d8d1676ed0665ce869b3bed91
             </div>`
         }
         else if (element.place === 2) {
