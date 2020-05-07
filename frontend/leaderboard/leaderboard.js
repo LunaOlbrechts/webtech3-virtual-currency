@@ -26,7 +26,7 @@ let updateLeaderboard = () => {
             return result.json();
         }).then(json => {
             //clear
-            document.querySelector("#leaderboard").innerHTML = "";
+            document.querySelector(".list").innerHTML = "";
             appendScore(json);
         }).catch(err => {
             console.log(err)
@@ -44,36 +44,35 @@ primus.on('data', (json) => {
 /* append a score to the leaderboard*/ 
 let appendScore = (json) => {
     json.data.forEach(element => {
-        console.log(element);
         if (element.place === 1) {
-            var score = `<div class="score__row">
+            var score = `<div class="list__row">
                 <p class="score score--gold">${element.place}</p>
-                <p class="score score__name">${element.fullname}</p>
-                <p class="score score__balance">${element.balance}</p>
+                <p class="score list__name">${element.fullname}</p>
+                <p class="score list__balance">${element.balance}</p>
             </div>`
         }
         else if (element.place === 2) {
-            var score = `<div class="score__row">
+            var score = `<div class="list__row">
                 <p class="score score--silver">${element.place}</p>
-                <p class="score score__name">${element.fullname}</p>
-                <p class="score score__balance">${element.balance}</p>
+                <p class="score list__name">${element.fullname}</p>
+                <p class="score list__balance">${element.balance}</p>
             </div>`
         }
         else if (element.place === 3) {
-            var score = `<div class="score__row">
+            var score = `<div class="list__row">
                 <p class="score score--bronze">${element.place}</p>
-                <p class="score score__name">${element.fullname}</p>
-                <p class="score score__balance">${element.balance}</p>
+                <p class="score list__name">${element.fullname}</p>
+                <p class="score list__balance">${element.balance}</p>
             </div>`
         }
         else{
-            var score = `<div class="score__row">
+            var score = `<div class="list__row">
                 <p class="score">${element.place}</p>
-                <p class="score score__name">${element.fullname}</p>
-                <p class="score score__balance">${element.balance}</p>
+                <p class="score list__name">${element.fullname}</p>
+                <p class="score list__balance">${element.balance}</p>
             </div>`
         }
         
-        document.querySelector('.scores').insertAdjacentHTML('beforeend', score);
+        document.querySelector('.list').insertAdjacentHTML('beforeend', score);
     });
 }
