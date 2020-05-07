@@ -24,7 +24,7 @@ h1, h2 {
 }
 
 .btn--login {
-  background-color: #BCDEF8;
+  background-color: #aed5f3;
   color: #000;
 }
 
@@ -73,10 +73,12 @@ body {
 
 .form__field {
   height: 40px;
-  background-color: #BCDEF8;
+  background-color: #aed5f3;
   border-radius: 4px;
   color: #fff;
   border: 1px solid #f5f5f5;
+  padding-left: 0.5em;
+  font-size: 1.2em;
 }
 
 .title {
