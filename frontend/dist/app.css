@@ -3,20 +3,16 @@ h1, h2 {
   justify-content: center;
 }
 
-.transfer__link {
+.link {
   text-decoration: none;
   color: #000;
-}
-
-.btn__container {
-  grid-column: 1;
-  grid-row: 9/9;
-  text-align: center;
 }
 
 .btn {
   width: 150px;
   font-size: 1em;
+  justify-self: center;
+  row-gap: 5px;
 }
 
 .btn--primary {
@@ -50,32 +46,18 @@ body {
   height: 100vh;
 }
 
-.base__container {
-  display: flex;
-  flex-direction: column;
-  height: 33vh;
-  background-color: #7AD3BB;
-}
-
-.balance__container {
-  width: 100%;
-  margin-top: 5vh;
-}
-
-.transfer__container {
+.container--top {
   display: grid;
 }
 
-.transfer__amount--send {
-  color: #D75358;
-}
-
-.transfer__amount--received {
-  color: #33B406;
-}
-
-.balance__container h1 {
-  color: #fff;
+.avatar {
+  /* container to put an avatar in */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #808080;
+  margin: 0.5em 0 0.5em 0.5em;
+  justify-self: center;
 }
 
 .form__container {
@@ -93,18 +75,14 @@ body {
   margin-bottom: 110px;
 }
 
-input {
+.form__field {
   height: 40px;
   background-color: white;
   border-radius: 4px;
   color: #000;
   border: 1px solid #BCDEF8;
-}
-
-#input--amount, #input--receiver {
-  border: 1px solid #7AD3BB;
-  background-color: transparent;
-  color: #000;
+  padding-left: 0.5em;
+  font-size: 1.2em;
 }
 
 .title {
@@ -113,65 +91,9 @@ input {
   margin-top: 10px;
 }
 
-.title_label {
-  justify-items: start;
-}
-
-.title__firstname {
-  justify-items: start;
-  row-gap: 5px;
-  grid-column: 1;
-  grid-row: 1/span 1;
-}
-
-#input--firstname {
-  grid-column: 1;
-  grid-row: 2/span 1;
-}
-
-.title--lastname {
-  row-gap: 5px;
-  grid-column: 2;
-  grid-row: 3/span 1;
-}
-
-#input--lastname {
-  grid-column: 1;
-  grid-row: 4/span 1;
-}
-
-.title--email {
-  row-gap: 5px;
-  grid-column: 1;
-  grid-row: 5/span 1;
-}
-
-#input--email {
-  grid-column: 1;
-  grid-row: 6/span 1;
-}
-
-.title--password {
-  row-gap: 5px;
-  grid-column: 1;
-  grid-row: 7/span 1;
-}
-
-#input--password {
-  grid-column: 1;
-  grid-row: 8/span 1;
-}
-
 .message {
   width: 100%;
   text-align: center;
-}
-
-#btn--signup {
-  justify-self: center;
-  row-gap: 5px;
-  grid-column: 1;
-  grid-row: 9/span 1;
 }
 
 .header {
@@ -182,6 +104,15 @@ input {
   background-color: #7AD3BB;
 }
 
+.header--xl {
+  height: 33vh;
+}
+
+.header__title__container {
+  width: 100%;
+  margin-top: 5vh;
+}
+
 .header__title {
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
@@ -189,16 +120,8 @@ input {
   align-self: center;
 }
 
-.scores {
-  display: grid;
-  grid-template-rows: 1fr;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.score__row {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  border-top: 1px solid #d3d3d3;
+.header__title--white {
+  color: #fff;
 }
 
 .score {
@@ -224,13 +147,42 @@ input {
   justify-self: center;
 }
 
-.score__name {
+.list {
+  display: grid;
+  grid-template-rows: 1fr;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.list__row {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  border-top: 1px solid #d3d3d3;
+}
+
+.list__name {
   grid-column: 2/span 1;
   justify-self: start;
 }
 
-.score__balance {
+.list__name--transfer {
+  margin-left: 15px;
+}
+
+.list__balance {
   grid-column: 3/span 1;
+}
+
+.list__balance--right {
+  margin-left: auto;
+  margin-right: 0.5em;
+}
+
+.transfer__amount--send {
+  color: #D75358;
+}
+
+.transfer__amount--received {
+  color: #33B406;
 }
 
 .nav {
@@ -251,34 +203,6 @@ input {
   color: #808080;
   justify-self: center;
   align-self: center;
-}
-
-.transfer {
-  display: flex;
-  flex-direction: row;
-}
-
-.transfer__avatar {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #808080;
-  margin: 0.5em 0 0.5em 0.5em;
-}
-
-.transfer__item {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-}
-
-.transfer__name {
-  margin-left: 0.5em;
-}
-
-.transfer__amount {
-  margin-left: auto;
-  margin-right: 0.5em;
 }
 
 /* ./node_modules/.bin/sass --watch ./frontend/source/sass/app.scss:./frontend/dist/app.css */

@@ -1,4 +1,4 @@
-.form__container{ // div around inputs
+.form__container{
     display: grid;
     grid-template-columns:  3fr;
     grid-template-rows:  1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr; 
@@ -13,18 +13,14 @@
     margin-bottom: 110px;
 }
 
-input{
+.form__field{
     height: 40px;
     background-color: $color-login-input;
     border-radius: 4px;
     color: $color-black;
     border: 1px solid $color-login-input-border;
-}
-
-#input--amount, #input--receiver {
-    border: 1px solid $color-default;
-    background-color: transparent;
-    color: $color-black;
+    padding-left: 0.5em;
+    font-size: 1.2em;
 }
 
 .title{
@@ -33,63 +29,7 @@ input{
     margin-top: 10px;
 }
 
-.title_label{
-    justify-items: start;
-}
-
-.title__firstname{
-    justify-items: start;
-    row-gap: 5px;
-    grid-column: 1;
-    grid-row: 1/ span 1;
-}
-
-#input--firstname{
-    grid-column: 1;
-    grid-row: 2/ span 1;
-}
-
-.title--lastname{
-    row-gap: 5px;
-    grid-column: 2;
-    grid-row: 3/ span 1;
-}
-
-#input--lastname{
-    grid-column: 1;
-    grid-row: 4/ span 1;
-}
-
-.title--email{
-    row-gap: 5px;
-    grid-column: 1;
-    grid-row: 5/ span 1;
-}
-
-#input--email{
-    grid-column: 1;
-    grid-row: 6/ span 1;
-}
-
-.title--password{
-    row-gap: 5px;
-    grid-column: 1;
-    grid-row: 7/ span 1;
-}
-
-#input--password{
-    grid-column: 1;
-    grid-row: 8/ span 1;
-}
-
-.message {
+.message{
     width: 100%;
     text-align: center;
-}
-
-#btn--signup{
-    justify-self: center;
-    row-gap: 5px;
-    grid-column: 1;
-    grid-row: 9/ span 1;
 }

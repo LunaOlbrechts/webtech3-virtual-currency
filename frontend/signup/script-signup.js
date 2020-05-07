@@ -35,6 +35,6 @@ let btnSignup = document.querySelector("#btn--signup").addEventListener("click",
         });
     }
     else{
-        document.querySelector(".message").innerHTML = "Sorry het email moet eindigen met @student.thomasmore.be";
+        document.querySelector(".message__field").innerHTML = "Sorry de email moet eindigen met @student.thomasmore.be";
     }
 });
