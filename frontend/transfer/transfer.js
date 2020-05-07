@@ -22,7 +22,7 @@ let transferBtn = document.querySelector('#transfer')
 let amountField = document.querySelector('#input__amount')
 let receiverField = document.querySelector('#input__receiver')
 let messageField = document.querySelector('.messageField')
-let balanceCounter = document.querySelector('.balance')
+let balanceCounter = document.querySelector('#balance')
 let transferReason = document.querySelector('#transferReason')
 let freeComment = document.querySelector("#comment")
 
