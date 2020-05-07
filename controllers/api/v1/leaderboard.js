@@ -18,8 +18,7 @@ const getAll =  (req, res) => {
                     'data': result.map(function (result) {
                         return {
                             "email": result.email,
-                            "firstname": result.firstname,
-                            "lastname": result.lastname,
+                            "fullname": result.fullname,
                             "balance": result.balance,
                             "place": place++
                         }

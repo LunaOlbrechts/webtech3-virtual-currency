@@ -7,8 +7,8 @@ let btnSignup = document.querySelector("#btn--signup").addEventListener("click",
     let password = document.querySelector("#input-password").value;
 
     let emailCheck = email.split("@");
+
     if(emailCheck[1] == "student.thomasmore.be"){
-        console.log(emailCheck[1]);
         fetch('http://localhost:3000/users/signup', {
             method: "post",
             headers: {
