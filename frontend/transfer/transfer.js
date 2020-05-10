@@ -87,7 +87,7 @@ function isEmpty(value){
     return (value == null || value.length === 0);
   }
 
-let userList = ["l","lu","lun","lunar","l","l","l","l","l","l","l","l"]
+let userList = []
 fetch("http://localhost:3000/api/v1/transfers/allUsers", {
     method: "get",
     'headers': {
@@ -106,10 +106,7 @@ fetch("http://localhost:3000/api/v1/transfers/allUsers", {
 });
 
 
-
 function autocomplete(inp, arr) {
-    console.log(inp)
-    console.log(arr)
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
     var currentFocus;

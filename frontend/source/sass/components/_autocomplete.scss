@@ -1,0 +1,30 @@
+.autocomplete{
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid $color-login-input-border;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    width: 280px;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: $color-white;
+    border-bottom: 1px solid $color-login-input-border;
+}
+
+.autocomplete-items div:hover {
+    background-color: $color-default;
+}
+
+
+.autocomplete-active{
+    background-color: $color-default;
+    color: $color-white;
+}

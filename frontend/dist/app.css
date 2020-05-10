@@ -8,15 +8,36 @@ h1, h2 {
   color: #000;
 }
 
-<<<<<<< HEAD
-.btn__container {
-  grid-column: 1;
-  grid-row: 9/9;
-  text-align: center;
+.autocomplete {
+  position: relative;
+  display: inline-block;
 }
 
-=======
->>>>>>> master
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #BCDEF8;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  width: 280px;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #BCDEF8;
+}
+
+.autocomplete-items div:hover {
+  background-color: #7AD3BB;
+}
+
+.autocomplete-active {
+  background-color: #7AD3BB;
+  color: #fff;
+}
+
 .btn {
   width: 150px;
   font-size: 1em;
@@ -33,11 +54,7 @@ h1, h2 {
 }
 
 .btn--login {
-<<<<<<< HEAD
   background-color: white;
-=======
-  background-color: #aed5f3;
->>>>>>> master
   color: #000;
 }
 
@@ -90,25 +107,17 @@ body {
 
 .form__field {
   height: 40px;
-<<<<<<< HEAD
   background-color: white;
   border-radius: 4px;
   color: #000;
   border: 1px solid #BCDEF8;
-}
-
-#input--amount, #input--receiver {
-  border: 1px solid #7AD3BB;
-  background-color: transparent;
-  color: #000;
-=======
-  background-color: #aed5f3;
-  border-radius: 4px;
-  color: #fff;
-  border: 1px solid #f5f5f5;
   padding-left: 0.5em;
   font-size: 1.2em;
->>>>>>> master
+  width: 90%;
+}
+
+select.form__field {
+  width: 95%;
 }
 
 .title {
