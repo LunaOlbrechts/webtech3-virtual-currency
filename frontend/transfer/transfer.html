@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../normalize.css">
     <link rel="stylesheet" href="../dist/app.css">
+    <link rel="stylesheet" href="temp.css">
     <title>Coins versturen</title>
 </head>
 <body>
@@ -21,11 +22,11 @@
         <div class="form__container">
             <div class="title"><label for="amount">Aantal</label></div>
             <input class="form__field" type="number" id="input__amount" name='amount'>
-
+        <form autocomplete="off" action="">
             <div class="title"><label for="receiver">Ontvanger</label></div>
             <input class="form__field" type="text" id="input__receiver" name='receiver'>
-
-            <label for="transferReason">Reden</label>
+        </form>
+        <div class="title"><label for="transferReason">Reden</label></div>
             <select class="form-control" id="transferReason">
                 <option></option>
                 <option>Development help</option>
