@@ -1,0 +1,1 @@
+localStorage.getItem("token")||(window.location.href="../login/login.html");let timeNow=(new Date).getMinutes(),loggedTime=localStorage.getItem("token_expiry");timeNow-loggedTime>=60&&(localStorage.removeItem("token"),localStorage.removeItem("token_expiry"),window.location.href="../login/login.html");
