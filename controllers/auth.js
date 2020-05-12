@@ -10,10 +10,11 @@ const signup = async (req, res, next) => {
     let password = req.body.password;
     let balance = 100;
 
+    let fullname = firstname.concat(' ', lastname);
+    
     const user = new User({
         email: email,
-        firstname: firstname,
-        lastname: lastname,
+        fullname: fullname,
         balance: balance
     });
 
@@ -43,7 +44,6 @@ const signup = async (req, res, next) => {
 
 const login = async (req, res, next) => {
     const user = await User.authenticate()(req.body.email, req.body.password).then(result => {
-        console.log(result.user);
         if (!result.user) {
             return res.json({
                 "status": "fail",

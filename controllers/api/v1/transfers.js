@@ -2,7 +2,7 @@ const Transfer = require("../../../models/Transfer")
 const User = require('../../../models/User');
 
 const getAll =  (req, res) => {
-    Transfer.find({$or: [{ sender: req.user.email }, { receiver: req.user.email }]}, (err, docs) => {
+    Transfer.find({$or: [{ sender: req.user.fullname }, { receiver: req.user.fullname }]}, (err, docs) => {
         if(!err) {
             res.json({
                 "status": "success",
@@ -12,7 +12,6 @@ const getAll =  (req, res) => {
             })
         }
     })
-    
 }
 
 //GET ONE MESSAGE
@@ -25,22 +24,32 @@ const getUser = (req, res) => {
     }) 
 }
 
+const getAllUsers = (req, res) => {
+    User.find({}, (err,docs) => {
+        res.json({
+            "status": "success",
+            "users": docs
+        })
+    })
+}
 
 const create = (req, res, next) => {
     let transfer = new Transfer()
-    transfer.sender = req.user.email,
+    transfer.sender = req.user.fullname,
     transfer.amount = req.body.amount,
+    transfer.reason = req.body.reason,
+    transfer.comment = req.body.comment,
     transfer.receiver = req.body.receiver
 
-    User.find({email: transfer.receiver}, (err, docs) => {
-        User.find({email: transfer.sender}, (err2,docs2) => {
+    User.find({fullname: transfer.receiver}, (err, docs) => {
+        User.find({fullname: transfer.sender}, (err2,docs2) => {
             if(docs[0] == null) {
                 res.json({
                     "status": "error",
                     "message": "De user waar je coins naar wilde sturen is niet gevonden",
                 })
             } else {
-                if(docs[0].email == docs2[0].email) {
+                if(docs[0].fullname == docs2[0].fullname) {
                     res.json({
                         "status": "error",
                         "message": "je kan geen coins naar jezelf sturen",
@@ -82,12 +91,12 @@ const create = (req, res, next) => {
                                     })
                                     let oldBalanceSender = docs2[0].balance
                                     let newBalanceSender = oldBalanceSender - transfer.amount
-                                    User.findOneAndUpdate({email: transfer.sender}, {balance: newBalanceSender}, (err,docs) => {
+                                    User.findOneAndUpdate({fullname: transfer.sender}, {balance: newBalanceSender}, (err,docs) => {
                                     })
                 
                                     let oldBalanceReceiver = docs[0].balance
                                     let newBalanceReveiver = oldBalanceReceiver + transfer.amount
-                                    User.findOneAndUpdate({email: transfer.receiver}, {balance: newBalanceReveiver}, (err,docs) => {
+                                    User.findOneAndUpdate({fullname: transfer.receiver}, {balance: newBalanceReveiver}, (err,docs) => {
                                     })
                         
                                 }else {
@@ -123,5 +132,6 @@ const getTransfer  = (req, res) => {
 
 module.exports.getAll = getAll
 module.exports.getUser = getUser
+module.exports.getAllUsers = getAllUsers
 module.exports.create = create
 module.exports.getTransfer = getTransfer

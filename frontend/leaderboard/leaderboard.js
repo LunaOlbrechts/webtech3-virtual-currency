@@ -1,4 +1,10 @@
 const base_url = "";
+
+/* redirect if user has no valid token */
+if (!localStorage.getItem("token")) {
+    window.location.href = "../login/login.html";
+}
+
 /* primus live */ 
 primus = Primus.connect("http://localhost:3000", {
     reconnect: {
@@ -36,34 +42,33 @@ primus.on('data', (json) => {
 });
 
 /* append a score to the leaderboard*/ 
-
 let appendScore = (json) => {
     json.data.forEach(element => {
         if (element.place === 1) {
             var score = `<div class="list__row">
                 <p class="score score--gold">${element.place}</p>
-                <p class="score list__name">${element.firstname} ${element.lastname}</p>
+                <p class="score list__name">${element.fullname}</p>
                 <p class="score list__balance">${element.balance}</p>
             </div>`
         }
         else if (element.place === 2) {
             var score = `<div class="list__row">
                 <p class="score score--silver">${element.place}</p>
-                <p class="score list__name">${element.firstname} ${element.lastname}</p>
+                <p class="score list__name">${element.fullname}</p>
                 <p class="score list__balance">${element.balance}</p>
             </div>`
         }
         else if (element.place === 3) {
             var score = `<div class="list__row">
                 <p class="score score--bronze">${element.place}</p>
-                <p class="score list__name">${element.firstname} ${element.lastname}</p>
+                <p class="score list__name">${element.fullname}</p>
                 <p class="score list__balance">${element.balance}</p>
             </div>`
         }
         else{
             var score = `<div class="list__row">
                 <p class="score">${element.place}</p>
-                <p class="score list__name">${element.firstname} ${element.lastname}</p>
+                <p class="score list__name">${element.fullname}</p>
                 <p class="score list__balance">${element.balance}</p>
             </div>`
         }

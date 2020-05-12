@@ -23,7 +23,21 @@
             <input class="form__field" type="number" id="input__amount" name='amount'>
 
             <div class="title"><label for="receiver">Ontvanger</label></div>
+            <form autocomplete="off" action="">
             <input class="form__field" type="text" id="input__receiver" name='receiver'>
+        </form>
+        <div class="title"><label for="transferReason">Reden</label></div>
+            <select class="form__field" id="transferReason">
+                <option></option>
+                <option>Development help</option>
+                <option>Design help</option>
+                <option>Feedback</option>
+                <option>Meeting deadlines</option>
+                <option>Other</option>
+            </select>
+
+            <div class="title"><label for="comment">Vrije opmerking</label></div>
+            <input class="form__field" type="text" id="comment" name='comment'>
 
             <button class="btn btn--primary btn--xl" id="transfer">Versturen</button>
         </div>

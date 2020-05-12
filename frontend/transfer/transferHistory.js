@@ -32,15 +32,16 @@ let appendTransfers = () => {
     let list = document.querySelector('.list')
     list.innerHTML = ""
         json.data.transactions.forEach(item => {
-            if(item.sender == email) { 
-              var name = item.receiver
-              var color = "transfer__amount--send"
-              var sign = "-"
-            }else {
-              var name = item.sender
-              var color = "transfer__amount--received"
-              var sign = "+"
-            }
+            console.log(fullname)
+            if(item.sender == fullname) { 
+                var name = item.receiver
+                var color = "transfer__amount--send"
+                var sign = "-"
+              }else {
+                var name = item.sender
+                var color = "transfer__amount--received"
+                var sign = "+"
+              }
 
             let transferItem = `<a class="link" href="./transferDetail.html?detail=${item._id}"><div class="list__row"> 
             <div class="avatar"></div>
@@ -56,7 +57,7 @@ let appendTransfers = () => {
 } 
 
  /* get user */
- let email;
+ let fullname;
 fetch("http://localhost:3000/api/v1/transfers/user", {
 method: "get",
 'headers': {
@@ -66,7 +67,7 @@ method: "get",
 }).then(result => {
     return result.json();
 }).then(json => {
-    email = json.user.email
+    fullname = json.user.fullname
     appendTransfers()
 }).catch(err => {
     console.log(err)

@@ -9,6 +9,14 @@ const transferSchema = new Schema({
         type: Number,
         required: true
     },
+    reason: {
+        type: String, 
+        required: true
+    },
+    comment: {
+        type: String,
+        required: false
+    },
     receiver: {
         type: String,
         required: true

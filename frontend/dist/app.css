@@ -8,6 +8,36 @@ h1, h2 {
   color: #000;
 }
 
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #BCDEF8;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  width: 280px;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #BCDEF8;
+}
+
+.autocomplete-items div:hover {
+  background-color: #7AD3BB;
+}
+
+.autocomplete-active {
+  background-color: #7AD3BB;
+  color: #fff;
+}
+
 .btn {
   width: 150px;
   font-size: 1em;
@@ -24,7 +54,7 @@ h1, h2 {
 }
 
 .btn--login {
-  background-color: #aed5f3;
+  background-color: white;
   color: #000;
 }
 
@@ -65,20 +95,29 @@ body {
   grid-template-columns: 3fr;
   grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr;
   row-gap: 10px;
-  height: 500px;
+  height: 600px;
+  min-width: 300px;
   align-self: center;
   justify-self: center;
   font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-bottom: 110px;
 }
 
 .form__field {
   height: 40px;
-  background-color: #aed5f3;
+  background-color: white;
   border-radius: 4px;
-  color: #fff;
-  border: 1px solid #f5f5f5;
+  color: #000;
+  border: 1px solid #BCDEF8;
   padding-left: 0.5em;
   font-size: 1.2em;
+  width: 90%;
+}
+
+select.form__field {
+  width: 95%;
 }
 
 .title {
