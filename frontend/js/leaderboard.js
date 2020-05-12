@@ -1,4 +1,4 @@
-const base_url = "";
+const base_url = "https://imdcurrency.herokuapp.com";
 
 /* redirect if user has no valid token */
 if (!localStorage.getItem("token")) {
@@ -6,7 +6,7 @@ if (!localStorage.getItem("token")) {
 }
 
 /* primus live */ 
-primus = Primus.connect("http://localhost:3000", {
+primus = Primus.connect(base_url, {
     reconnect: {
         max: Infinity // Number: The max delay before we try to reconnect.
       , min: 500 // Number: The minimum delay before we try reconnect.
@@ -16,7 +16,7 @@ primus = Primus.connect("http://localhost:3000", {
 
 let updateLeaderboard = () => {
 
-    fetch("http://localhost:3000/api/v1/leaderboard", {
+    fetch(base_url + "/api/v1/leaderboard", {
         
         method: "get",
         'headers': {

@@ -8,7 +8,7 @@
     <title>Leaderboard</title>
 </head>
 <body>
-    <div class="header">
+    <div class="header header--orange">
         <h5 class="header__title">Leaderboard</h5>
     </div>
 
@@ -18,11 +18,12 @@
 
     <nav class="nav">
         <a class="nav__link" href="../leaderboard/leaderboard.html"><img src="/frontend/icons/emoji_events-24px.svg"></a>
+        <a class='nav__link' href="../index/app.html"><img src="/frontend/icons/home.png"></a>
         <a class="nav__link" href="../transfer/transfer.html"><img src="/frontend/icons/swap_vert-24px.svg"></a>
-        <a class="nav__link" href="../transfer/transferHistory.html"><img src="/frontend/icons/history-24px.svg" alt=""></a>
+        <a class="nav__link" href="../transfer/transferHistory.html"><img src="/frontend/icons/history-24px.svg"></a>
     </nav>
 
-    <script src="http://localhost:3000/primus/primus.js"></script>
+    <script src="https://imdcurrency.herokuapp.com/primus/primus.js"></script>
     <script src="./../../dist/app.js/leaderboard-min.js"></script>
     <script src="../../dist/app.js/app-min.js"></script>
 </body>

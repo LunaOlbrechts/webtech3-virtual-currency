@@ -8,14 +8,28 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>WELCOME</h1>
+    <div class="header header--xl">
+        <div class="header__title__container">
+            <h2 form-title>Huidig Balans:</h2>
+            <h1 class="header__title--white" id="balance">XXXX</h1>
+            <button class="btn btn--primary btn--reverse">coins versturen!</button>
+        </div>
+    </div>
+
+    <h3 class="list__title">recente transacties</h2>
+    <div class="list">
+        
+    </div>
     
 
     <nav class="nav">
-        <a class="nav__link" href="../leaderboard/leaderboard.html">Leaderboard</a>
-        <a class="nav__link" href="../transfer/transfer.html">Transaction</a>
-        <a class="nav__link" href="../transfer/transferHistory.html">History</a>
+        <a class="nav__link" href="../leaderboard/leaderboard.html"><img src="/frontend/icons/emoji_events-24px.svg"></a>
+        <a class='nav__link' href="../index/app.html"><img src="/frontend/icons/home.png"></a>
+        <a class="nav__link" href="../transfer/transfer.html"><img src="/frontend/icons/swap_vert-24px.svg"></a>
+        <a class="nav__link" href="../transfer/transferHistory.html"><img src="/frontend/icons/history-24px.svg"></a>
     </nav>
+    <script src="https://imdcurrency.herokuapp.com/primus/primus.js"></script>
+    <script src=../js/homepage.js></script>
     <script src="../../dist/app.js/app-min.js"></script>
 </body>
 </html>
