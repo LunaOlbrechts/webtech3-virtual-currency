@@ -24,6 +24,15 @@ const getUser = (req, res) => {
     }) 
 }
 
+const getAllUsers = (req, res) => {
+    User.find({}, (err,docs) => {
+        res.json({
+            "status": "success",
+            "users": docs
+        })
+    })
+}
+
 const create = (req, res, next) => {
     let transfer = new Transfer()
     transfer.sender = req.user.fullname,
@@ -123,5 +132,6 @@ const getTransfer  = (req, res) => {
 
 module.exports.getAll = getAll
 module.exports.getUser = getUser
+module.exports.getAllUsers = getAllUsers
 module.exports.create = create
 module.exports.getTransfer = getTransfer

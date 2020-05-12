@@ -21,6 +21,11 @@
     border: 1px solid $color-login-input-border;
     padding-left: 0.5em;
     font-size: 1.2em;
+    width: 90%;
+}
+
+select.form__field {
+    width: 95%;
 }
 
 .title{

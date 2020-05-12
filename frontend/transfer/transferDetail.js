@@ -2,11 +2,11 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const transferId = urlParams.get('detail');
 
-let balance = document.querySelector('.balance')
-let sender = document.querySelector('.sender__name')
-let receiver = document.querySelector('.receiver__name')
-let reason = document.querySelector('.sender__reason')
-let comment = document.querySelector('.sender__comment')
+let balance = document.querySelector('#balance')
+let sender = document.querySelector('#sender__name')
+let receiver = document.querySelector('#receiver__name')
+let reason = document.querySelector('#sender__reason')
+let comment = document.querySelector('#sender__comment')
 
 fetch("http://localhost:3000/api/v1/transfers/" + transferId, {
 method: "get",
