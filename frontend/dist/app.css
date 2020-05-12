@@ -81,7 +81,7 @@ body {
 .form__container {
   display: grid;
   grid-template-columns: 3fr;
-  grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr 1fr;
   row-gap: 10px;
   height: 600px;
   min-width: 300px;
@@ -92,6 +92,13 @@ body {
   padding: 20px;
   margin-bottom: 110px; }
 
+.form__container--small {
+  grid-template-rows: 1fr 2fr 1fr 2fr 1fr 1fr;
+  height: auto; }
+
+.form__container--medium {
+  grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr; }
+
 .form__field {
   height: 40px;
   background-color: white;
@@ -101,6 +108,9 @@ body {
   padding-left: 0.5em;
   font-size: 1.2em;
   width: 90%; }
+
+.form__footer {
+  text-align: center; }
 
 select.form__field {
   width: 95%; }
@@ -136,6 +146,10 @@ select.form__field {
 
 .header__title--white {
   color: #fff; }
+
+.header--orange {
+  background-color: #FD823E;
+  height: 15vh; }
 
 .score {
   color: #000;

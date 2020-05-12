@@ -31,7 +31,7 @@ let btnSignup = document.querySelector("#btn--signup").addEventListener("click",
                 let token = json.data.token;
                 localStorage.setItem("token", token);
                 localStorage.setItem("token_expiry", timeNow);
-                window.location.href = "../leaderboard/leaderboard.html";
+                window.location.href = "../index/app.html";
             }
         });
     }
