@@ -1,17 +1,14 @@
 h1, h2 {
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .link {
   text-decoration: none;
-  color: #000;
-}
+  color: #000; }
 
 .autocomplete {
   position: relative;
-  display: inline-block;
-}
+  display: inline-block; }
 
 .autocomplete-items {
   position: absolute;
@@ -19,53 +16,40 @@ h1, h2 {
   border-bottom: none;
   border-top: none;
   z-index: 99;
-  width: 280px;
-}
+  width: 280px; }
 
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
   background-color: #fff;
-  border-bottom: 1px solid #BCDEF8;
-}
+  border-bottom: 1px solid #BCDEF8; }
 
 .autocomplete-items div:hover {
-  background-color: #7AD3BB;
-}
+  background-color: #7AD3BB; }
 
 .autocomplete-active {
   background-color: #7AD3BB;
-  color: #fff;
-}
+  color: #fff; }
 
 .btn {
   width: 150px;
   font-size: 1em;
   justify-self: center;
-  row-gap: 5px;
-}
+  row-gap: 5px; }
 
 .btn--primary {
   color: #fff;
   background-color: #7AD3BB;
   padding: 0.5em 1em;
   display: inline-block;
-  border: none;
-}
-
-.btn--login {
-  background-color: white;
-  color: #000;
-}
+  border: none; }
 
 .btn--xl {
   font-size: 1.5em;
-  padding: 0.7em 1em;
-}
+  padding: 0.7em 1em; }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+  font-family: Arial, Helvetica, sans-serif; }
 
 .container {
   display: grid;
@@ -73,12 +57,10 @@ body {
   justify-content: center;
   align-items: center;
   align-self: center;
-  height: 100vh;
-}
+  height: 100vh; }
 
 .container--top {
-  display: grid;
-}
+  display: grid; }
 
 .avatar {
   /* container to put an avatar in */
@@ -87,8 +69,7 @@ body {
   border-radius: 50%;
   background-color: #808080;
   margin: 0.5em 0 0.5em 0.5em;
-  justify-self: center;
-}
+  justify-self: center; }
 
 .form__container {
   display: grid;
@@ -102,8 +83,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  margin-bottom: 110px;
-}
+  margin-bottom: 110px; }
 
 .form__field {
   height: 40px;
@@ -113,112 +93,91 @@ body {
   border: 1px solid #BCDEF8;
   padding-left: 0.5em;
   font-size: 1.2em;
-  width: 90%;
-}
+  width: 90%; }
 
 select.form__field {
-  width: 95%;
-}
+  width: 95%; }
 
 .title {
   display: grid;
   justify-self: start;
-  margin-top: 10px;
-}
+  margin-top: 10px; }
 
 .message {
   width: 100%;
-  text-align: center;
-}
+  text-align: center; }
 
 .header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 23vh;
-  background-color: #7AD3BB;
-}
+  background-color: #7AD3BB; }
 
 .header--xl {
-  height: 33vh;
-}
+  height: 33vh; }
 
 .header__title__container {
   width: 100%;
-  margin-top: 5vh;
-}
+  margin-top: 5vh; }
 
 .header__title {
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2em;
-  align-self: center;
-}
+  align-self: center; }
 
 .header__title--white {
-  color: #fff;
-}
+  color: #fff; }
 
 .score {
   color: #000;
-  justify-self: center;
-}
+  justify-self: center; }
 
 .score--gold {
-  grid-column: 1/span 1;
+  grid-column: 1/ span 1;
   color: #FFD700;
-  justify-self: center;
-}
+  justify-self: center; }
 
 .score--silver {
-  grid-column: 1/span 1;
+  grid-column: 1/ span 1;
   color: #C0C0C0;
-  justify-self: center;
-}
+  justify-self: center; }
 
 .score--bronze {
-  grid-column: 1/span 1;
+  grid-column: 1/ span 1;
   color: #CD7F32;
-  justify-self: center;
-}
+  justify-self: center; }
 
 .list {
   display: grid;
   grid-template-rows: 1fr;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  font-family: Arial, Helvetica, sans-serif; }
 
 .list__row {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  border-top: 1px solid #d3d3d3;
-}
+  border-top: 1px solid #d3d3d3; }
 
 .list__name {
-  grid-column: 2/span 1;
-  justify-self: start;
-}
+  grid-column: 2/ span 1;
+  justify-self: start; }
 
 .list__name--transfer {
-  margin-left: 15px;
-}
+  margin-left: 15px; }
 
 .list__balance {
-  grid-column: 3/span 1;
-}
+  grid-column: 3/ span 1; }
 
 .list__balance--right {
   margin-left: auto;
-  margin-right: 0.5em;
-}
+  margin-right: 0.5em; }
 
 .transfer__amount--send {
-  color: #D75358;
-}
+  color: #D75358; }
 
 .transfer__amount--received {
-  color: #33B406;
-}
+  color: #33B406; }
 
 .nav {
   font-family: Arial, Helvetica, sans-serif;
@@ -230,16 +189,12 @@ select.form__field {
   left: 0;
   right: 0;
   border: 1px solid #d3d3d3;
-  background-color: #fff;
-}
+  background-color: #fff; }
 
 .nav__link {
   text-decoration: none;
   color: #808080;
   justify-self: center;
-  align-self: center;
-}
+  align-self: center; }
 
 /* ./node_modules/.bin/sass --watch ./frontend/source/sass/app.scss:./frontend/dist/app.css */
-
-/*# sourceMappingURL=app.css.map */
