@@ -1,10 +1,11 @@
+const base_url = "https://imdcurrency.herokuapp.com";
 localStorage.removeItem('token');
 
 let btnLogin = document.querySelector("#login").addEventListener("click", (e) => {
     let email = document.querySelector("#input-email").value;
     let password = document.querySelector("#input-password").value;
 
-    fetch('http://localhost:3000/users/login', {
+    fetch(base_url + "/users/login", {
         method: "post",
         headers: {
             'Content-Type': 'application/json',

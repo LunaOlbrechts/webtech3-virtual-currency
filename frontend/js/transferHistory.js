@@ -1,10 +1,11 @@
+const base_url = "https://imdcurrency.herokuapp.com";
 /* redirect if not logged in */
 if (!localStorage.getItem("token")) {
     window.location.href = "../login/login.html";
 }
 
 /* Primus live */
-primus = Primus.connect("http://localhost:3000", {
+primus = Primus.connect(base_url, {
     reconnect: {
         max: Infinity,
         min: 500,
@@ -20,7 +21,7 @@ primus.on('data', (json) => {
 
 /* append transfers */
 let appendTransfers = () => {
-    fetch("http://localhost:3000/api/v1/transfers", {
+    fetch(base_url + "/api/v1/transfers", {
     method: "get",
     'headers': {
         'content-type': 'application/json',
@@ -32,7 +33,6 @@ let appendTransfers = () => {
     let list = document.querySelector('.list')
     list.innerHTML = ""
         json.data.transactions.forEach(item => {
-            console.log(fullname)
             if(item.sender == fullname) { 
                 var name = item.receiver
                 var color = "transfer__amount--send"
@@ -58,7 +58,7 @@ let appendTransfers = () => {
 
  /* get user */
  let fullname;
-fetch("http://localhost:3000/api/v1/transfers/user", {
+fetch(base_url + "/api/v1/transfers/user", {
 method: "get",
 'headers': {
     'content-type': 'application/json',

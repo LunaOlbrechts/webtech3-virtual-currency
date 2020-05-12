@@ -1,3 +1,4 @@
+const base_url = "https://imdcurrency.herokuapp.com";
 localStorage.removeItem('token');
 
 let btnSignup = document.querySelector("#btn--signup").addEventListener("click", (e) => {
@@ -9,7 +10,7 @@ let btnSignup = document.querySelector("#btn--signup").addEventListener("click",
     let emailCheck = email.split("@");
 
     if(emailCheck[1] == "student.thomasmore.be"){
-        fetch('http://localhost:3000/users/signup', {
+        fetch(base_url + '/users/signup', {
             method: "post",
             headers: {
                 'Content-Type': 'application/json'
