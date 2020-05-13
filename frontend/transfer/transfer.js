@@ -29,13 +29,21 @@ let freeComment = document.querySelector("#comment")
 /* post transfer */
 transferBtn.addEventListener('click', e => {
     let amount = amountField.value
+    let roundedAmount = parseFloat(amount).toFixed(2);
     let receiver = receiverField.value 
     let reason = transferReason.value
     let comment = freeComment.value
+    let amountLength = amount.split(".");
+    let roundedAmountLength = roundedAmount.split(".");
 
+    console.log(roundedAmount);
     if(isEmpty(amount) || isEmpty(receiver) || isEmpty(reason)) {
         messageField.innerHTML = "gelieve alle velden in te vullen"
-    }else {
+    }
+    else if(amountLength[1].toString().length > roundedAmountLength[1].toString().length){
+        messageField.innerHTML = "Je kan max 2 cijfers na de komma invullen"
+    }
+    else {
         fetch("http://localhost:3000/api/v1/transfers", {
         method: "post",
         'headers': {
