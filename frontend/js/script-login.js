@@ -1,10 +1,11 @@
+const base_url = "https://imdcurrency.herokuapp.com";
 localStorage.removeItem('token');
 
 let btnLogin = document.querySelector("#login").addEventListener("click", (e) => {
     let email = document.querySelector("#input-email").value;
     let password = document.querySelector("#input-password").value;
 
-    fetch('http://localhost:3000/users/login', {
+    fetch(base_url + "/users/login", {
         method: "post",
         headers: {
             'Content-Type': 'application/json',
@@ -21,7 +22,7 @@ let btnLogin = document.querySelector("#login").addEventListener("click", (e) =>
             let token = json.data.token;
             localStorage.setItem("token", token);
             localStorage.setItem("token_expiry", time);
-            window.location.href = "../leaderboard/leaderboard.html";
+            window.location.href = "../index/app.html";
         }
         else {
             let feedback = document.querySelector('.message__field');

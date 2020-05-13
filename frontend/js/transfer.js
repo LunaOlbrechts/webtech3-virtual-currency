@@ -1,10 +1,11 @@
+const base_url = "https://imdcurrency.herokuapp.com";
 /* redirect if not logged in */
 if (!localStorage.getItem("token")) {
     window.location.href = "../login/login.html";
 }
 
 /* Primus live */
-primus = Primus.connect("http://localhost:3000", {
+primus = Primus.connect(base_url, {
     reconnect: {
         max: Infinity,
         min: 500,
@@ -73,7 +74,7 @@ transferBtn.addEventListener('click', e => {
 /* updateBalance function */
 let updateBalance = () => {
     /* get balance */
-    fetch("http://localhost:3000/api/v1/transfers/user", {
+    fetch(base_url + "/api/v1/transfers/user", {
         method: "get",
         'headers': {
             'content-type': 'application/json',
@@ -95,7 +96,7 @@ function isEmpty(value){
   }
 
 let userList = []
-fetch("http://localhost:3000/api/v1/transfers/allUsers", {
+fetch(base_url + "/api/v1/transfers/allUsers", {
     method: "get",
     'headers': {
         'content-type': 'application/json',

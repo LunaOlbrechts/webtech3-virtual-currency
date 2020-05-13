@@ -1,3 +1,4 @@
+const base_url = "https://imdcurrency.herokuapp.com";
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const transferId = urlParams.get('detail');
@@ -8,7 +9,7 @@ let receiver = document.querySelector('#receiver__name')
 let reason = document.querySelector('#sender__reason')
 let comment = document.querySelector('#sender__comment')
 
-fetch("http://localhost:3000/api/v1/transfers/" + transferId, {
+fetch(base_url +"/api/v1/transfers/" + transferId, {
 method: "get",
 'headers': {
     'content-type': 'application/json',
