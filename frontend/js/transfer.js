@@ -40,10 +40,8 @@ transferBtn.addEventListener('click', e => {
     if(isEmpty(amount) || isEmpty(receiver) || isEmpty(reason)) {
         messageField.innerHTML = "gelieve alle velden in te vullen"
     }
-    else if(!isEmpty(amountLength[1])){
-        if(amountLength[1].toString().length > roundedAmountLength[1].toString().length){
+    else if(!isEmpty(amountLength[1]) && amountLength[1].toString().length > roundedAmountLength[1].toString().length){
             messageField.innerHTML = "Je kan max 2 cijfers na de komma invullen"
-        }
     }
     else {
         fetch(base_url + "/api/v1/transfers", {
