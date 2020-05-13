@@ -11,6 +11,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiTransfersRouter = require('./routes/api/v1/transfers');
 const apiLeaderboardRouter = require('./routes/api/v1/leaderboard');
+const apiProfileRouter = require('./routes/api/v1/profile');
 
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
@@ -34,6 +35,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api/v1/transfers',  passport.authenticate('jwt', { session: false }), apiTransfersRouter);
 app.use('/api/v1/leaderboard', passport.authenticate('jwt', { session: false }), apiLeaderboardRouter);
+app.use('/api/v1/profile', passport.authenticate('jwt', { session: false }), apiProfileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -14,7 +14,6 @@ const getAll =  (req, res) => {
     })
 }
 
-//GET ONE MESSAGE
 const getUser = (req, res) => {
     User.find({_id: req.user._id}, (err, docs) => {
         res.json({

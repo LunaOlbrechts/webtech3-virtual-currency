@@ -6,6 +6,10 @@ h1, h2 {
   text-decoration: none;
   color: #000; }
 
+.subtitle {
+  font-size: 1.5em;
+  font-weight: bold; }
+
 .autocomplete {
   position: relative;
   display: inline-block; }

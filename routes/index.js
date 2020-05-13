@@ -4,7 +4,7 @@ const app = express()
 const apiV1LeaderboardRouter = require("./api/v1/leaderboard")
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('index', { title: 'Express' })
 });
 

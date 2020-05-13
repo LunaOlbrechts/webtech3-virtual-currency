@@ -1,6 +1,5 @@
 const User = require("../../../models/User");
 
-
 const getAll =  (req, res) => {
         const sortBalance = { balance: -1};
         User.find().sort(sortBalance).exec( (err, result) => {
@@ -11,10 +10,10 @@ const getAll =  (req, res) => {
                 });
             }
             if (!err) {
-                let place= 1;
+                let place = 1;
                 res.json({
                     "status": "success",
-                    'data': result.map(function (result) {
+                    'data': result.map( (result) => {
                         return {
                             "email": result.email,
                             "fullname": result.fullname,
