@@ -59,7 +59,6 @@ transferBtn.addEventListener('click', e => {
         }).then(result => {
             return result.json();
         }).then(json => {
-            console.log(json);
             messageField.innerHTML = json.message
             primus.write({
                 "action": "updated balance counter",
