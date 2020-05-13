@@ -36,7 +36,6 @@ transferBtn.addEventListener('click', e => {
     let amountLength = amount.split(".");
     let roundedAmountLength = roundedAmount.split(".");
 
-    console.log(roundedAmount);
     if(isEmpty(amount) || isEmpty(receiver) || isEmpty(reason)) {
         messageField.innerHTML = "gelieve alle velden in te vullen"
     }
