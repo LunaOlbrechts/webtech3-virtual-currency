@@ -14,8 +14,6 @@ let getprofile = () =>{
         return result.json();
     }).then(json => {
         appendData(json)
-        console.log(json.sendedCoins);
-
     }).catch(err => {
         console.log(err)
     });
@@ -25,14 +23,45 @@ getprofile();
 
 let appendData = (json) =>{
     if(json){
-        if(json.sendedCoins){
-            var amount = [];
+        if(json.sendedCoins && json.receivedCoins){
+            var sendedCoins = [];
+            var receivedCoins =[];
 
             json.sendedCoins.forEach(element => {
-                amount.push(element.amount);
+                sendedCoins.push(element.amount);
+            });
+
+            json.receivedCoins.forEach(element => {
+                receivedCoins.push(element.amount);
+            })
+    
+            var sumOfAmount= sendedCoins.reduce((a, b) => a + b)    
+            var sumOfReceived = receivedCoins.reduce((a, b) => a + b)    
+
+            var userData = `
+            <div class="profile__data__balance">
+            <div class="subtitle">Balance</div>
+                <p>${json.user.balance}</p>
+            </div
+            <div class="profile__data__name">
+            <div class="subtitle">Profile</div>
+            <p>${json.user.fullname}</p>
+            </div>
+            <div class="subtitle">Sended coins</div>
+            <p>${sumOfAmount}</p>
+            </div>
+            <div class="subtitle">Received coins</div>
+            <p>${sumOfReceived}</p>
+            </div>`
+        }
+        else if(json.sendedCoins){
+            var sendedCoins = [];
+
+            json.sendedCoins.forEach(element => {
+                sendedCoins.push(element.amount);
             });
     
-            var sumOfAmount= amount.reduce((a, b) => a + b)    
+            var sumOfAmount= sendedCoins.reduce((a, b) => a + b)    
 
             var userData = `
             <div class="profile__data__balance">
@@ -47,6 +76,28 @@ let appendData = (json) =>{
             <p>${sumOfAmount}</p>
             </div>`
         }
+        else if (json.receivedCoins){
+            var receivedCoins =[];
+
+            json.sendedCoins.forEach(element => {
+                receivedCoins.push(element.amount);
+            });
+    
+            var sumOfReceived = receivedCoins.reduce((a, b) => a + b)    
+
+            var userData = `
+            <div class="profile__data__balance">
+            <div class="subtitle">Balance</div>
+                <p>${json.user.balance}</p>
+            </div
+            <div class="profile__data__name">
+            <div class="subtitle">Profile</div>
+            <p>${json.user.fullname}</p>
+            </div>
+            <div class="subtitle">Sended coins</div>
+            <p>${sumOfReceived}</p>
+            </div>`
+        }
         else{
             var userData = `
             <div class="profile__data__balance">
@@ -58,7 +109,6 @@ let appendData = (json) =>{
             <p>${json.user.fullname}</p>
             </div>`
         }
-
     }
 
     document.querySelector(".profile__data").insertAdjacentHTML('beforeend', userData);
