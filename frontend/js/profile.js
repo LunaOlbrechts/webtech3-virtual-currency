@@ -1,5 +1,5 @@
 
-const base_url = "http://127.0.0.1:3000";
+const base_url = "https://imdcurrency.herokuapp.com";
 const profile = document.querySelector(".profile__data");
 
 
@@ -47,10 +47,10 @@ let appendData = (json) =>{
             <div class="subtitle">Profile</div>
             <p>${json.user.fullname}</p>
             </div>
-            <div class="subtitle">Sent coins</div>
+            <div class="subtitle">coins sent</div>
             <p>${sumOfSent}</p>
             </div>
-            <div class="subtitle">Received coins</div>
+            <div class="subtitle">coins Received</div>
             <p>${sumOfReceived}</p>
             </div>`
         }

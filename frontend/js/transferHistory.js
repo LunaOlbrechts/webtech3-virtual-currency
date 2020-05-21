@@ -46,8 +46,8 @@ let appendTransfers = () => {
             let transferItem = `<a class="link" href="./transferDetail.html?detail=${item._id}"><div class="list__row"> 
             <div class="avatar"></div>
             <div class="list__name"><p>` + name  + `</p></div>
-            <div class="list__balance list__balance--right"><p class="` + color + `"> ` + sign + `${item.amount}</p></div>
-            </div></a>`
+           <p class="list__balance list__balance--right ` + color + `"> ` + sign + `${item.amount}</p></div>
+            </a>`
                 
             list.insertAdjacentHTML('afterbegin', transferItem)
         });

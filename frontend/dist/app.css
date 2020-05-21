@@ -103,6 +103,10 @@ body {
 .form__container--medium {
   grid-template-rows: 1fr 2fr 1fr 2fr 1fr 2fr 1fr 2fr 1fr; }
 
+.form__container--profile {
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: auto; }
+
 .form__field {
   height: 40px;
   background-color: white;
