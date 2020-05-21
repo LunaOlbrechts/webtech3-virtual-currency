@@ -10,7 +10,7 @@ const getUser = (req, res) => {
                 res.json({
                     "status": "sucess", 
                     "user": docs[0],
-                    "sendedCoins": docs2,
+                    "sentCoins": docs2,
                     "receivedCoins": docs3
                 })
             }
@@ -18,7 +18,7 @@ const getUser = (req, res) => {
                 res.json({
                     "status": "sucess", 
                     "user": docs[0],
-                    "sendedCoins": docs2
+                    "sentCoins": docs2
                 })
             }
             else if( docs3){

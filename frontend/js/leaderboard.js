@@ -17,7 +17,6 @@ primus = Primus.connect(base_url, {
 let updateLeaderboard = () => {
 
     fetch(base_url + "/api/v1/leaderboard", {
-        
         method: "get",
         'headers': {
             'Authorization': 'Bearer ' + localStorage.getItem('token')

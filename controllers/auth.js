@@ -31,14 +31,14 @@ const signup = async (req, res, next) => {
                 "token": token
             }
         });
-    }).catch(error => {
-        console.log(error);
-        res.json({
-            "status": "failed",
-            "message": {
-                "error": error
-            }
-        });
+        }).catch(error => {
+            console.log(error);
+            res.json({
+                "status": "failed",
+                "message": {
+                    "error": error
+                }
+            });
     });
 }
 
