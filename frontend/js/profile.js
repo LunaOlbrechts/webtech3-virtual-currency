@@ -37,6 +37,8 @@ let appendData = (json) =>{
     
             var sumOfSent= sentCoins.reduce((a, b) => a + b)    
             var sumOfReceived = receivedCoins.reduce((a, b) => a + b)    
+            var sent = sumOfSent.toFixed(2)
+            var received = sumOfReceived.toFixed(2)
 
             var userData = `
             <div class="profile__data__balance">
@@ -48,10 +50,10 @@ let appendData = (json) =>{
             <p>${json.user.fullname}</p>
             </div>
             <div class="subtitle">coins sent</div>
-            <p>${sumOfSent}</p>
+            <p>${sent}</p>
             </div>
             <div class="subtitle">coins Received</div>
-            <p>${sumOfReceived}</p>
+            <p>${received}</p>
             </div>`
         }
         else if(json.sentCoins){
